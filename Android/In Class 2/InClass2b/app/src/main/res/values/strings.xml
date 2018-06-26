@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">InClass2b</string>
+    <string name="euro">Euro (EUR)</string>
+    <string name="canadian_dollor">Canadian Dollor (CAD)</string>
+    <string name="british_pound">British Pound (GBP)</string>
+    <string name="japanese_yen">Japanese Yen (JPY)</string>
+    <string name="clear_all">Clear All</string>
+    <string name="text_hint">1</string>
+    <string name="convert_button">Convert</string>
+    <string name="euro_hint">1 USD = 0.84 EUR</string>
+    <string name="canadian_hint">1 USD = 1.19 CAD</string>
+    <string name="british_hint">1 USD = .65 GBP</string>
+    <string name="japanese_hint">1 USD = 117.62 JPY</string>
+</resources>

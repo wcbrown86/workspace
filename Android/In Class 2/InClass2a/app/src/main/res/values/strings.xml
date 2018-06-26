@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">In Class 2a</string>
+    <string name="text_hint">Amount (USD)</string>
+    <string name="result_text">Result:</string>
+    <string name="euro">Euro (EUR)</string>
+    <string name="canadian_dollor">Canadian Dollor (CAD)</string>
+    <string name="british_pound">British Pound (GBP)</string>
+    <string name="japanese_yen">Japanese Yen (JPY)</string>
+    <string name="clear_all">Clear All</string>
+</resources>

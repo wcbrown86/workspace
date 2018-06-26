@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.williambrown.midtearm.MainActivity">
+
+    <EditText
+        android:id="@+id/search_field"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:ems="10"
+        android:hint="@string/searchHint"
+        android:inputType="textPersonName" />
+
+    <TextView
+        android:id="@+id/seek_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/search_field"
+        android:text="@string/limit"
+        android:textColor="@android:color/black"
+        android:textSize="18sp" />
+
+    <SeekBar
+        android:id="@+id/seekBar2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/search_field"
+        android:layout_marginLeft="66dp"
+        android:layout_marginStart="66dp"
+        android:layout_toRightOf="@+id/seek_view"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignBottom="@+id/seek_view" />
+
+    <Button
+        android:id="@+id/search_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="17dp"
+        android:text="@string/searchButton"
+        android:layout_marginLeft="22dp"
+        android:layout_marginStart="22dp"
+        android:layout_below="@+id/seekBar2"
+        android:layout_toRightOf="@+id/sort"
+        android:layout_toEndOf="@+id/sort" />
+
+    <Button
+        android:id="@+id/reset_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/resetButton"
+        android:layout_alignBaseline="@+id/search_button"
+        android:layout_alignBottom="@+id/search_button"
+        android:layout_toRightOf="@+id/search_button"
+        android:layout_toEndOf="@+id/search_button" />
+
+    <TextView
+        android:id="@+id/sort"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:text="@string/sortText"
+        android:textColor="@android:color/black"
+        android:textSize="18sp"
+        android:layout_marginLeft="13dp"
+        android:layout_marginStart="13dp"
+        android:layout_below="@+id/search_button"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <Switch
+        android:id="@+id/switch_sort"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="12dp"
+        android:layout_marginStart="12dp"
+        android:layout_alignTop="@+id/sort"
+        android:layout_toRightOf="@+id/search_button"
+        android:layout_toEndOf="@+id/search_button" />
+
+    <TextView
+        android:id="@+id/sort_price"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/sortPrice"
+        android:textColor="@android:color/black"
+        android:textSize="18sp"
+        android:layout_alignBottom="@+id/switch_sort"
+        android:layout_toLeftOf="@+id/reset_button"
+        android:layout_toStartOf="@+id/reset_button" />
+
+    <TextView
+        android:id="@+id/sort_date"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/sortDate"
+        android:textColor="@android:color/black"
+        android:textSize="18sp"
+        android:layout_alignBottom="@+id/switch_sort"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginRight="20dp"
+        android:layout_marginEnd="20dp" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/scrollView2">
+
+    </ScrollView>
+
+    <TextView
+        android:id="@+id/results"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/scrollView2"
+        android:layout_centerHorizontal="true"
+        android:text="@string/resultsText"
+        android:textColor="@android:color/black"
+        android:textSize="18sp" />
+
+</RelativeLayout>

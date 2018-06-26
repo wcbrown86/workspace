@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="view_name" type="id">Student Name</item>
+    <item name="view_email" type="id">View Email</item>
+    <item name="view_department" type="id">View Department</item>
+    <item name="view_mood" type="id">View Mood</item>
+    <item name="edit_name" type="id">edit Name</item>
+    <item name="edit_email" type="id">Edit Email</item>
+    <item name="edit_department" type="id">Edit Department</item>
+    <item name="edit_mood" type="id">Edit Mood</item>
+    <item name="save_button" type="id">Save Buttom</item>
+</resources>

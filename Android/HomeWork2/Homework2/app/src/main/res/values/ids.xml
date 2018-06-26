@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="search_field" type="id">Search Field</item>
+    <item name="search_button" type="id">Search Button</item>
+    <item name="image" type="id">image</item>
+    <item name="previous_button" type="id">Previous Button</item>
+    <item name="next_button" type="id">Next Button</item>
+</resources>

@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">Time Converter</string>
+    <string name="utc_text">UTC:</string>
+    <string name="hours_hint">Hours</string>
+    <string name="colon">:</string>
+    <string name="minute_hint">Minutes</string>
+    <string name="button_radio">Button/Radio:</string>
+    <string name="results">Results:</string>
+    <string name="est_text">Eastern Standard Time (EST)</string>
+    <string name="cst_text">Central Standard Time (CST)</string>
+    <string name="mst_text">Mountain Standard Time (MST)</string>
+    <string name="pst_text">Pacific Standard Time (PST)</string>
+    <string name="clear_text">Clear All</string>
+    <string name="convert_text">Convert</string>
+    <string name="previousDay">Previous Day</string>
+    <string name="previousDayFiller">        </string>
+</resources>

@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">InClass5</string>
+    <string name="checkNetwork">Check Network</string>
+    <string name="selectNewsSource">Select News Source:</string>
+    <string name="finished">Finished</string>
+    <string name="description">Description:</string>
+    <string name="getNews">Get News</string>
+    <string-array name="newSelection">
+        <item>Select</item>
+        <item>BBC</item>
+        <item>CNN</item>
+    </string-array>
+</resources>

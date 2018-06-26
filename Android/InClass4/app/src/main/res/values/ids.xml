@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="password_count" type="id">Password Count</item>
+    <item name="password_count_text" type="id">Password Count Text</item>
+    <item name="count_seek" type="id">Count Seek Bar</item>
+    <item name="password_length_text" type="id">Password Length Text</item>
+    <item name="password_length" type="id">Password Length</item>
+    <item name="password_view" type="id">password</item>
+    <item name="selected_password" type="id">Selected Password</item>
+    <item name="thread_button" type="id">Thread Button</item>
+    <item name="async_button" type="id">ASYNC Button</item>
+    <item name="password_seek" type="id">Password Seek Count</item>
+</resources>

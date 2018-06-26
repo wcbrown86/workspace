@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="button_EUR" type="id">euro</item>
+    <item name="canadianDollor" type="id">Canadian Dollor</item>
+    <item name="british_pound" type="id">British Pound</item>
+    <item name="japaneseYen" type="id">Japanese Yen</item>
+    <item name="clearAll" type="id">Clear All</item>
+</resources>

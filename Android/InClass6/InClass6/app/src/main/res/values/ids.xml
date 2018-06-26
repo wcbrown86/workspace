@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="viewImageWapper" type="id">Wapper for image view</item>
+    <item name="thumbNail" type="id">Thumb Nail</item>
+    <item name="textViewWapper" type="id">Text View Wapper</item>
+    <item name="storyTitle" type="id">Story Title</item>
+    <item name="scview" type="id">scroll View</item>
+    <item name="news_title" type="id">News Title</item>
+    <item name="date_pub" type="id">Data Published</item>
+    <item name="full_sized_image" type="id">full sized image</item>
+    <item name="set_text" type="id">Set Text</item>
+</resources>

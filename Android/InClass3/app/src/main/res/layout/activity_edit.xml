@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.williambrown.inclass3.MainActivity">
+
+    <EditText
+        android:id="@+id/name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:ems="10"
+        android:hint="@string/name_hint"
+        android:inputType="textPersonName" />
+
+    <EditText
+        android:id="@+id/email"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/name"
+        android:ems="10"
+        android:hint="@string/email_hint"
+        android:inputType="textPersonName" />
+
+    <RadioGroup
+        android:layout_width="350dp"
+        android:layout_height="250dp"
+        android:id="@+id/radioGroup"
+        android:layout_below="@+id/email"
+        android:layout_centerHorizontal="true">
+
+        <TextView
+            android:id="@+id/radio_display"
+            android:layout_width="match_parent"
+            android:layout_height="46dp"
+            android:layout_alignLeft="@+id/radioGroup"
+            android:layout_alignStart="@+id/radioGroup"
+            android:layout_below="@+id/email"
+            android:layout_weight="1"
+            android:text="@string/radioDisplay"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <RadioButton
+            android:id="@+id/sis_select"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:text="@string/sis"
+            android:textSize="24sp" />
+
+        <RadioButton
+            android:id="@+id/cs_select"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:text="@string/cs"
+            android:textSize="24sp" />
+
+        <RadioButton
+            android:id="@+id/bio_select"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:text="@string/bio"
+            android:textSize="24sp" />
+
+        <RadioButton
+            android:id="@+id/other_select"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:text="@string/other"
+            android:textSize="24sp" />
+    </RadioGroup>
+
+    <TextView
+        android:id="@+id/current_text"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/radioGroup"
+        android:layout_marginTop="15dp"
+        android:text="@string/currentMood"
+        android:textSize="20sp"
+        android:textStyle="bold"/>
+
+    <SeekBar
+        android:id="@+id/edit_mood"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_below="@+id/current_text"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="15dp" />
+
+    <Button
+        android:id="@+id/submit_button"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/edit_mood"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="12dp"
+        android:text="@string/save"
+        tools:id="@id/save_button" />
+
+</RelativeLayout>

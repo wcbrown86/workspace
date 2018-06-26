@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="euro" type="id">Euro</item>
+    <item name="canadianDollar" type="id">Canadian Dollar</item>
+    <item name="british_pound" type="id">British Pound</item>
+    <item name="japanese_yen" type="id">Japanese Yen</item>
+    <item name="clearAll" type="id">Clear All</item>
+    <item name="calculate" type="id">Calculate</item>
+</resources>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="search_field" type="id">search field</item>
+    <item name="seek_view" type="id">seek view</item>
+    <item name="search_button" type="id">Search Button</item>
+    <item name="reset_button" type="id">Reset Button</item>
+    <item name="sort" type="id">Sort</item>
+    <item name="sort_price" type="id">sort price</item>
+</resources>

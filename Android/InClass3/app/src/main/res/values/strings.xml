@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">InClass3</string>
+    <string name="name_hint">Name</string>
+    <string name="email_hint">Email</string>
+    <string name="radioDisplay">Departments:</string>
+    <string name="sis">SIS</string>
+    <string name="cs">CS</string>
+    <string name="bio">BIO</string>
+    <string name="other">Other</string>
+    <string name="currentMood">Your Current Mood:</string>
+    <string name="submit">Submit</string>
+    <string name="save">Save</string>
+</resources>

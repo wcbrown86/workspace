@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">Midtearm</string>
+    <string name="searchHint">Artist Name</string>
+    <string name="limit">Limit:   </string>
+    <string name="searchButton">Search</string>
+    <string name="resetButton">Reset</string>
+    <string name="sortText">Sort By:</string>
+    <string name="sortPrice">Price</string>
+    <string name="sortDate">Date</string>
+    <string name="resultsText">Results</string>
+    <string name="finish_button">Finish</string>
+</resources>

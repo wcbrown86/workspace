@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="utc_textView" type="id">UTC</item>
+    <item name="input_hours" type="id">Input Hours</item>
+    <item name="text_seperation" type="id">text seperation</item>
+    <item name="input_minutes" type="id">Input Minutes</item>
+    <item name="button_switch" type="id">Button Switch</item>
+    <item name="view_results" type="id">Results</item>
+    <item name="button_est" type="id">Button EST</item>
+    <item name="button_cst" type="id">Button CST</item>
+    <item name="button_mst" type="id">Button MST</item>
+    <item name="button_pst" type="id">Button PST</item>
+    <item name="button_clear" type="id">Buttom Clear</item>
+    <item name="button_convert" type="id">Buttom Convert</item>
+    <item name="radio_est" type="id">Radio EST</item>
+    <item name="radio_cst" type="id">Radio CST</item>
+    <item name="radio_mst" type="id">Radio MST</item>
+    <item name="radio_pst" type="id">Radio PST</item>
+    <item name="radio_clear" type="id">Radio Clear</item>
+    <item name="previous_day" type="id">Previous Day</item>
+</resources>

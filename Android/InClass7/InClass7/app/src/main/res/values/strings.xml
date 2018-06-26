@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">InClass7</string>
+    <string name="sortDate">Date</string>
+    <string name="sortPrice">Price</string>
+    <string name="sortText">Sort By:</string>
+    <string name="resetButton">Reset</string>
+    <string name="searchButton">Search</string>
+    <string name="limit">Limit:</string>
+    <string name="searchHint">Search</string>
+    <string name="finish_button">Finish</string>
+    <string name="resultsText">Results</string>
+</resources>

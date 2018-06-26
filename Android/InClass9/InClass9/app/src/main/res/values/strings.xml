@@ -1,0 +1,25 @@
+<resources>
+    <string name="app_name">InClass9</string>
+    <string name="current_expense_text">Current Expenses</string>
+    <string name="addText">Add Expense</string>
+    <string name="expenceName">Expense Name</string>
+    <string name="cat">Category</string>
+    <string name="amount_text">Amount</string>
+    <string name="cancel_text">Cancel</string>
+    <string name="add_expense_text">Add Expense</string>
+    <string name="expense_detailText">Expense Detail</string>
+    <string name="name">Name</string>
+    <string name="date_text">Date</string>
+    <string name="close_text">Close</string>
+    <string name="edit_text">Exit Expense</string>
+    <string-array name="spinner_selection">
+        <item>Groceries</item>
+        <item>Invoice</item>
+        <item>Transportation</item>
+        <item>Shopping</item>
+        <item>Rent</item>
+        <item>Trips</item>
+        <item>Utilities</item>
+        <item>Other</item>
+    </string-array>
+</resources>
