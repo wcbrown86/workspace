@@ -1,0 +1,288 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		055CCAB617284504008D20BA /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 055CCAB517284504008D20BA /* UIKit.framework */; };
+		055CCAB817284504008D20BA /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 055CCAB717284504008D20BA /* Foundation.framework */; };
+		055CCABA17284504008D20BA /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 055CCAB917284504008D20BA /* CoreGraphics.framework */; };
+		055CCAC017284504008D20BA /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 055CCABE17284504008D20BA /* InfoPlist.strings */; };
+		055CCAC217284504008D20BA /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 055CCAC117284504008D20BA /* main.m */; };
+		055CCAC617284504008D20BA /* Local_MusicAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 055CCAC517284504008D20BA /* Local_MusicAppDelegate.m */; };
+		055CCAC817284504008D20BA /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 055CCAC717284504008D20BA /* Default.png */; };
+		055CCACA17284504008D20BA /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 055CCAC917284504008D20BA /* Default@2x.png */; };
+		055CCACC17284504008D20BA /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 055CCACB17284504008D20BA /* Default-568h@2x.png */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		055CCAB217284504008D20BA /* ProjectOne.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ProjectOne.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		055CCAB517284504008D20BA /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		055CCAB717284504008D20BA /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		055CCAB917284504008D20BA /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		055CCABD17284504008D20BA /* ProjectOne-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "ProjectOne-Info.plist"; sourceTree = "<group>"; };
+		055CCABF17284504008D20BA /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		055CCAC117284504008D20BA /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		055CCAC317284504008D20BA /* ProjectOne-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ProjectOne-Prefix.pch"; sourceTree = "<group>"; };
+		055CCAC417284504008D20BA /* Local_MusicAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Local_MusicAppDelegate.h; sourceTree = "<group>"; };
+		055CCAC517284504008D20BA /* Local_MusicAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Local_MusicAppDelegate.m; sourceTree = "<group>"; };
+		055CCAC717284504008D20BA /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
+		055CCAC917284504008D20BA /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
+		055CCACB17284504008D20BA /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		055CCAAF17284504008D20BA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				055CCAB617284504008D20BA /* UIKit.framework in Frameworks */,
+				055CCAB817284504008D20BA /* Foundation.framework in Frameworks */,
+				055CCABA17284504008D20BA /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		055CCAA917284503008D20BA = {
+			isa = PBXGroup;
+			children = (
+				055CCABB17284504008D20BA /* ProjectOne */,
+				055CCAB417284504008D20BA /* Frameworks */,
+				055CCAB317284504008D20BA /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		055CCAB317284504008D20BA /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				055CCAB217284504008D20BA /* ProjectOne.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		055CCAB417284504008D20BA /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				055CCAB517284504008D20BA /* UIKit.framework */,
+				055CCAB717284504008D20BA /* Foundation.framework */,
+				055CCAB917284504008D20BA /* CoreGraphics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		055CCABB17284504008D20BA /* ProjectOne */ = {
+			isa = PBXGroup;
+			children = (
+				055CCAC417284504008D20BA /* Local_MusicAppDelegate.h */,
+				055CCAC517284504008D20BA /* Local_MusicAppDelegate.m */,
+				055CCABC17284504008D20BA /* Supporting Files */,
+			);
+			path = ProjectOne;
+			sourceTree = "<group>";
+		};
+		055CCABC17284504008D20BA /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				055CCABD17284504008D20BA /* ProjectOne-Info.plist */,
+				055CCABE17284504008D20BA /* InfoPlist.strings */,
+				055CCAC117284504008D20BA /* main.m */,
+				055CCAC317284504008D20BA /* ProjectOne-Prefix.pch */,
+				055CCAC717284504008D20BA /* Default.png */,
+				055CCAC917284504008D20BA /* Default@2x.png */,
+				055CCACB17284504008D20BA /* Default-568h@2x.png */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		055CCAB117284504008D20BA /* ProjectOne */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 055CCACF17284504008D20BA /* Build configuration list for PBXNativeTarget "ProjectOne" */;
+			buildPhases = (
+				055CCAAE17284504008D20BA /* Sources */,
+				055CCAAF17284504008D20BA /* Frameworks */,
+				055CCAB017284504008D20BA /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ProjectOne;
+			productName = ProjectOne;
+			productReference = 055CCAB217284504008D20BA /* ProjectOne.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		055CCAAA17284503008D20BA /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = "Local Music";
+				LastUpgradeCheck = 0460;
+				ORGANIZATIONNAME = "William Brown";
+			};
+			buildConfigurationList = 055CCAAD17284503008D20BA /* Build configuration list for PBXProject "ProjectOne" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 055CCAA917284503008D20BA;
+			productRefGroup = 055CCAB317284504008D20BA /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				055CCAB117284504008D20BA /* ProjectOne */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		055CCAB017284504008D20BA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				055CCAC017284504008D20BA /* InfoPlist.strings in Resources */,
+				055CCAC817284504008D20BA /* Default.png in Resources */,
+				055CCACA17284504008D20BA /* Default@2x.png in Resources */,
+				055CCACC17284504008D20BA /* Default-568h@2x.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		055CCAAE17284504008D20BA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				055CCAC217284504008D20BA /* main.m in Sources */,
+				055CCAC617284504008D20BA /* Local_MusicAppDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		055CCABE17284504008D20BA /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				055CCABF17284504008D20BA /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		055CCACD17284504008D20BA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		055CCACE17284504008D20BA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		055CCAD017284504008D20BA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "ProjectOne/ProjectOne-Prefix.pch";
+				INFOPLIST_FILE = "ProjectOne/ProjectOne-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		055CCAD117284504008D20BA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "ProjectOne/ProjectOne-Prefix.pch";
+				INFOPLIST_FILE = "ProjectOne/ProjectOne-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		055CCAAD17284503008D20BA /* Build configuration list for PBXProject "ProjectOne" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				055CCACD17284504008D20BA /* Debug */,
+				055CCACE17284504008D20BA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		055CCACF17284504008D20BA /* Build configuration list for PBXNativeTarget "ProjectOne" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				055CCAD017284504008D20BA /* Debug */,
+				055CCAD117284504008D20BA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 055CCAAA17284503008D20BA /* Project object */;
+}

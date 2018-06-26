@@ -1,0 +1,6 @@
+04:50:05 **** Incremental Build of configuration Debug for project hw01p1 ****
+make all 
+make: Nothing to be done for `all'.
+
+04:50:05 Build Finished (took 231ms)
+
