@@ -1,0 +1,2 @@
+mkdir: cannot create directory ‘result/’: File exists
+=>> PBS: job killed: walltime 1210 exceeded limit 1200

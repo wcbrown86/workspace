@@ -1,0 +1,1 @@
+usage: mpirun ./mpi_ping_pong <value>
