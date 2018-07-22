@@ -1,14 +1,21 @@
 """
-    Author: 
-    Date:
+    Author: William Chad Brown
+    Date: July 2018
 
-    Description:
+    Description:    Ths class is used by the player to create there player, and to 
+                    select the types of attacks the player will like to exicute. 
+
+    Todo:
 """
+
+# Imports, The random class is used to deturmine the attack hit points, and the ablility to run,
 import random
 
 
 class Player(object):
 
+    # __init__ function sets all the player variables to empty or 0 values. 
+    # This function is not needed. Can be removed and would not effect the program. 
     def __init__(self):
         self.sex = " "
         self.damage = 0
@@ -16,10 +23,15 @@ class Player(object):
         self.magic = 0
         self.race = " "
 
+    # This function is called when the game starts and is used to allow the user to
+    # create there player. Each attribute of the player that can be changed will prompt 
+    # the user to select there prefered choice. 
     def create_player(self):
 
         print("Please select the attributes of your character.")
 
+        # Prompts the user to select the characters Sex. Currently supports just
+        # Male and Female. 
         selection = input("Please enter select one of the options below. \n"
                           + "1. Female  \n"
                           + "2. Male    \n")
@@ -29,8 +41,13 @@ class Player(object):
             self.sex = "Male"
 
         selection_made = False
+
+        # Loop that allows the user to select the race of the charater. 
+        # The loop will continue until the user enters a correct number. 
+        # any number outside of the range will be rejected and the loop will 
+        # continue. 
         while selection_made is False:
-            print("Please select a race.1")
+            print("Please select a race.")
             print("1. Orc")
             print("2. Elf")
             print("3. Human")
