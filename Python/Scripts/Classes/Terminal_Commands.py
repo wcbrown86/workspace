@@ -8,14 +8,10 @@
 
 # Needed imports
 import subprocess
+import os
 
 
 class Terminal:
-
-    # Unused init, was first setup for testing, the code was left encase it needs
-    # to be used again later.
-    def __init__(self):
-        print("Start Terminal")
 
     # This function pulls the contents of the clip boards and translates that to a string then
     # returns that string. The command pbpaste is used to pull the information from the
@@ -33,6 +29,16 @@ class Terminal:
         paste = subprocess.Popen('pbcopy', env={'LANG': 'en_US.UTF-8'}, stdin=subprocess.PIPE)
         paste.communicate(contents.encode('utf-8'))
 
-
-
+    # This function is called when the copied text needs to be edited before it can be pasted 
+    # The function writes to a file called temp.txt. If the file does not exist then it is 
+    # created, if if does exist the contents of the file is overwritten. Once the file is 
+    # made and the inforamtion is placed in the file, the terminal command to open Visual
+    # Studio Code. This can be changed to any editor that can be launched from the command line.
+    @staticmethod
+    def open_VSCode(contents):
+        outFile = open('temp.txt', "w")
+        outFile.write(contents)
+        outFile.close()
+        open_code = subprocess.Popen(['/usr/local/bin/code', 'temp.txt'], stdin=subprocess.PIPE)
+        open_code.communicate()[0]
 
