@@ -4,6 +4,10 @@
 
     Description:    This class is used to allow the calling program to access or run some terminal
                     commands. This class is meant to be used by multiple programs.
+
+    Notes:          This Class is only set up to function on a Linux or Macinosh systems. The 
+                    commands that are used in this class will not function on a Windows operating 
+                    system. 
 """
 
 # Needed imports
@@ -11,7 +15,7 @@ import subprocess
 import os
 
 
-class Terminal:
+class Terminal(object):
 
     # This function pulls the contents of the clip boards and translates that to a string then
     # returns that string. The command pbpaste is used to pull the information from the
@@ -42,3 +46,8 @@ class Terminal:
         open_code = subprocess.Popen(['/usr/local/bin/code', 'temp.txt'], stdin=subprocess.PIPE)
         open_code.communicate()[0]
 
+    # This function is used to clean up the terminal window when needed. It calls the clear 
+    # command. 
+    @staticmethod
+    def clear_CLI():
+        subprocess.call('clear')
