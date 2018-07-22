@@ -54,6 +54,7 @@ class Enemy(object):
             return True
         else:
             return False
+    
     # Function that is called to deturmine what type of attack
     # the enemy will preform, or if the enemy will attempt to run. 
     def attack(self, player):
@@ -66,7 +67,10 @@ class Enemy(object):
                     rand = random.randint(0, 100)
                     if rand > 40:
                         return self.malee()
-                    
+    
+    # Malee function defines the amount of damaged that the enemy will 
+    # deal with a malee attack. This function uses the random class to 
+    # help with deturmining how much damage will be dealt.                
     def malee(self):
 
         rand = random.randint(0, 100)
@@ -74,7 +78,10 @@ class Enemy(object):
         damage_out = attack_percent * self.damage
         print("You attacked and did", damage_out, " damage")
         return damage_out
-
+   
+    # The run function attempts to allow the enemy to run. This is deturmined 
+    # by generating a random number and if the number given is within a set range then
+    # the run will be successful, if not the enemy will lose health. 
     def run(self):
         rand = random.randint(0,100)
 
