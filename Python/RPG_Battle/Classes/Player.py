@@ -54,6 +54,8 @@ class Player(object):
             print("4. Dwarf")
             selection = input("Make a selection to see attributes\n")
 
+            # Use inputs '1' this will set the users race as an Orc, and will set 
+            # all the related charater attributes as discribed below.
             if selection is '1':
                 print("You Choose the mighty Orc.")
                 print("Health: 110")
@@ -68,6 +70,9 @@ class Player(object):
                     self.race = "Orc"
                 else:
                     selection_made = False
+            
+            # Use inputs '2' this will set the users race as an Elf, and will set 
+            # all the related charater attributes as discribed below.
             elif selection is '2':
                 print("You Choose the magical Elf.")
                 print("Health: 90")
@@ -82,6 +87,9 @@ class Player(object):
                     self.race = "Elf"
                 else:
                     selection_made = False
+            
+            # Use inputs '3' this will set the users race as an Human, and will set 
+            # all the related charater attributes as discribed below.
             elif selection is '3':
                 print("You Choose the noble Human.")
                 print("Health: 100")
@@ -96,6 +104,9 @@ class Player(object):
                     self.race = "Human"
                 else:
                     selection_made = False
+            
+            # Use inputs '4' this will set the users race as an Dwarf, and will set 
+            # all the related charater attributes as discribed below.
             elif selection is '4':
                 print("You Choose the mystical Dwarf.")
                 print("Health: 100")
@@ -111,6 +122,9 @@ class Player(object):
                 else:
                     selection_made = False
 
+    # The attack function calculates the total attack damage that the player will
+    # deal on the enemy. This is calculated with a random number being used as a 
+    # percentage of the total players attack points. 
     def attack(self):
 
         rand = random.randint(0, 100)
@@ -119,17 +133,26 @@ class Player(object):
         print("You attacked and did", damage_out, " damage")
         return damage_out
 
+    # The run function uses a random number to deturmin if the player can ran away
+    # from the fight. If the player is unable to run then the player will lose health
     def run(self):
         rand = random.randint(0, 100)
 
         if rand <= 20:
             return True
         else:
+            reduce_health(10)
             return False
 
+    # Reduce Health subtracts the provided amount from the players health. 
+    #
+    # Needs to have a check for the player being dead built in. 
     def reduce_health(self, x):
         self.health -= x
 
+    # This function checks to see if the players health has dropped to zero or 
+    # below, if it has then it returns true and the player is dead. If not then 
+    # the player is still kicking and the fight will go on. 
     def is_dead(self):
         if self.health <= 0:
             return True
