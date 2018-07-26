@@ -1,17 +1,26 @@
 """
     Author: William Chad Brown
     Copyright: May 2018
+    
     Description:    This is the Game class, in this class the battle is controlled.
                     The play_game function is called from the main file. This function
                     controls the back and forth of the turn style battle simulation.
+
+    Todo:           1. Restructure the play_game function. 
+                    2. Pull the text that is in the play_game function to a seperate 
+                       function to reduce the size of the play_game function. 
 """
+
+# Import statements that is needed for the functions. 
 from .Enemy import Enemy
 import random
 
 
 class Game(object):
 
-    # init function, stores the player information and creates the enemy.
+    # The init function takes the information that the user passes,
+    # in the difficulty setting, and the player character information.
+    # Then it uses the difficulty setting and creates a enemy.
     def __init__(self, diff, player):
 
         # storing difficulty and player information.
@@ -32,16 +41,26 @@ class Game(object):
         elif diff is '4':
             self.enemy = Enemy(130, 30, 50, rand)
 
+    # The play game function is the main funciton that controls the 
+    # back and forth. The text and controls for the fight until the 
+    # player wins or one of the characters runs from the fight.  
     def play_game(self):
+
+        # Intro text
         print("Welcome to the Battle Ring!!")
         print("The contender has stepped forward. A", self.enemy.race, " entered!!")
         winner = False
 
         rand = random.randint(0, 100)
 
+        # This if statment is used to deturmine if the player or the 
+        # enemy will attack first. 
         if rand <= 80:
 
             print("You get the jump on the enemy and get to make the first move.")
+
+            # THe while loop that will continue until either the player or the enemy 
+            # dies, or runs away from the fight. 
             while winner is False:
 
                 print("Your turn to attack")

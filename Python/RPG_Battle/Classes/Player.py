@@ -5,7 +5,11 @@
     Description:    Ths class is used by the player to create there player, and to 
                     select the types of attacks the player will like to exicute. 
 
-    Todo:
+    Todo:           1. Add is_dead check in reduce health to help with streamline of 
+                       reducing health and keeping the need to make sure that this is 
+                       called everytime the reduce health function is called. 
+
+                    2. Create a system for player levels. 
 """
 
 # Imports, The random class is used to deturmine the attack hit points, and the ablility to run,

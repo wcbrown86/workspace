@@ -15,6 +15,8 @@
                have the __init__ deturmine the rest of the enemy attributes. this will 
                cut down code needed in other classes and will help with future changes.
 
+            3. Create a system that responds to the users level. 
+
 """
 
 # Import staments, random is used to deturmine the attack values.

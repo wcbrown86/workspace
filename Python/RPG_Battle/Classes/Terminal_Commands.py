@@ -8,6 +8,9 @@
     Notes:          This Class is only set up to function on a Linux or Macinosh systems. The 
                     commands that are used in this class will not function on a Windows operating 
                     system. 
+
+    Todo:           Provide functions that edit the color of the text pushed to the console.
+                    
 """
 
 # Needed imports

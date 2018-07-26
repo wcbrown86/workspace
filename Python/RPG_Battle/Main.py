@@ -3,27 +3,36 @@
     Title: RPG Battle Sim.
     Copyright: May, 2018
 
-    Description:
+    Description:    This File is used to drive the overall program. This program will
+                    ask the user to create there player and then continue. 
 
 """
+
+# Imports needed for the program. Both imports points to created classes
 from Classes.Player import Player
 from Classes.Game import Game
 
+# Local variables 
 difficulty = 0
 player = Player()
 
+# Welcome message
 print("\n")
 print("Welcome to the RPG Battle Sim 2018!")
 print("Please create your player! \n\n")
 
+# Call to create the users character.
 player.create_player()
 
+# Asks the user to select the level of difficulty. 
 print("")
 difficulty = input("Please select a level of difficulty. \n"
                    + "1. Easy\n"
                    + "2. Normal\n"
                    + "3. Hard\n"
                    + "4. Extreme\n")
+
+# While loop that contines until the player currectly creates a character.
 cont = False
 while cont is False:
     print("You picked a", player.sex, player.race)
@@ -40,6 +49,7 @@ while cont is False:
         elif user_in is 'n' or 'N':
             cont = True
 
+# Once the players character is created to the players liking the game will begin. 
 game = Game(difficulty, player)
 
 game.play_game()
