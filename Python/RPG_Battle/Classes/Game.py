@@ -6,9 +6,9 @@
                     The play_game function is called from the main file. This function
                     controls the back and forth of the turn style battle simulation.
 
-    Todo:           1. Restructure the play_game function. 
+    Todo:           1. Restructure the play_game function. -- Complete/ Needs testing
                     2. Pull the text that is in the play_game function to a seperate 
-                       function to reduce the size of the play_game function. 
+                       function to reduce the size of the play_game function. -- Complete/ Needs testing
 """
 
 # Import statements that is needed for the functions. 
@@ -59,34 +59,63 @@ class Game(object):
 
             print("You get the jump on the enemy and get to make the first move.")
 
-            # THe while loop that will continue until either the player or the enemy 
+            # The while loop that will continue until either the player or the enemy 
             # dies, or runs away from the fight. 
             while winner is False:
 
-                print("Your turn to attack")
-                print("Current health -", self.player.health)
-                print("Current magic - ", self.player.magic)
-                print("Select you attack type.")
-                print("1. Melee attack.")
-                print("2. Magic")
-                print("3. Run")
-                user_input = input("Please make a selection.\n")
+                print_menu()
+                player_turn()
+                self.enemy.attack()
+        else:
+            
+            print("Your enemy sneaks up behind you, and attacks!!")
 
-                if user_input is '1':
-                    damage_out = self.player.attack()
-                    self.enemy.reduce_health(damage_out)
-                elif user_input is '2':
-                    damage_out = 0
-                    self.enemy.reduce_health(damage_out)
-                elif user_input is '3':
-                    can_run = self.player.run()
+            while winner is False:
 
-                    if can_run is True:
-                        print("You are able to get away. But you have been banned from the arena!!\n")
-                        winner = True
-                    else:
-                        print("The crowd pushes you back, preventing you from getting away. You lost 10 health.\n")
-                        self.player.reduce_health(10)
-                        if self.player.is_dead() is True:
-                            print("You Have DIED!!!. The enemy has won!\n")
-                            winner = True
+                self.enemy.attack()
+                print_menu()
+                player_turn()
+
+    # This function will take the input from the player and 
+    # preform the action that the player selects. 
+    def player_turn():
+        
+        user_input = input("Please make a selection.\n")
+
+        if user_input is '1':
+            damage_out = self.player.attack()
+            self.enemy.reduce_health(damage_out)
+        elif user_input is '2':
+            damage_out = 0
+            self.enemy.reduce_health(damage_out)
+        elif user_input is '3':
+            attempt_run()
+    
+    
+    # This function prints the menu to the player. 
+    def print_menu():
+
+        print("Your turn to attack")
+        print("Current health -", self.player.health)
+        print("Current magic - ", self.player.magic)
+        print("Select you attack type.")
+        print("1. Melee attack.")
+        print("2. Magic")
+        print("3. Run")
+    
+    
+    # The runt function in this scop will call the players run function,
+    # if the players run function returns true then a statment of success 
+    # is shown to the player. If not then the player is shown a different 
+    # message and then checks to see if the player is dead.                 
+    def attempt_run():
+        can_run = self.player.run()
+
+        if can_run is True:
+            print("You are able to get away. But you have been banned from the arena!!\n")
+            winner = True
+        else:
+            print("The crowd pushes you back, preventing you from getting away. You lost 10 health.\n")
+            if self.player.is_dead() is True:
+                print("You Have DIED!!!. The enemy has won!\n")
+                winner = True
