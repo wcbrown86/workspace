@@ -9,10 +9,13 @@
     Todo:           1. Restructure the play_game function. -- Complete/ Needs testing
                     2. Pull the text that is in the play_game function to a seperate 
                        function to reduce the size of the play_game function. -- Complete/ Needs testing
+                    3. Add in clear CLI commands to keep the screen clear to increase readablity of the 
+                       prgram as the player makes choices. 
 """
 
 # Import statements that is needed for the functions. 
 from .Enemy import Enemy
+from .Terminal import Terminal
 import random
 
 
@@ -81,6 +84,7 @@ class Game(object):
     def player_turn():
         
         user_input = input("Please make a selection.\n")
+        Terminal.clear_CLI()
 
         if user_input is '1':
             damage_out = self.player.attack()
@@ -110,7 +114,6 @@ class Game(object):
     # message and then checks to see if the player is dead.                 
     def attempt_run():
         can_run = self.player.run()
-
         if can_run is True:
             print("You are able to get away. But you have been banned from the arena!!\n")
             winner = True
