@@ -128,6 +128,7 @@ class Player(object):
                 else:
                     selection_made = False
         Terminal.clear_CLI()
+   
     # The attack function calculates the total attack damage that the player will
     # deal on the enemy. This is calculated with a random number being used as a 
     # percentage of the total players attack points. 
