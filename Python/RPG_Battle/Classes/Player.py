@@ -14,6 +14,7 @@
 
 # Imports, The random class is used to deturmine the attack hit points, and the ablility to run,
 import random
+from .Terminal_Commands import Terminal
 
 
 class Player(object):
@@ -44,6 +45,7 @@ class Player(object):
         else:
             self.sex = "Male"
 
+        Terminal.clear_CLI()
         selection_made = False
 
         # Loop that allows the user to select the race of the charater. 
@@ -57,7 +59,7 @@ class Player(object):
             print("3. Human")
             print("4. Dwarf")
             selection = input("Make a selection to see attributes\n")
-
+            Terminal.clear_CLI()
             # Use inputs '1' this will set the users race as an Orc, and will set 
             # all the related charater attributes as discribed below.
             if selection is '1':
@@ -125,7 +127,7 @@ class Player(object):
                     self.race = "Dwarf"
                 else:
                     selection_made = False
-
+        Terminal.clear_CLI()
     # The attack function calculates the total attack damage that the player will
     # deal on the enemy. This is calculated with a random number being used as a 
     # percentage of the total players attack points. 

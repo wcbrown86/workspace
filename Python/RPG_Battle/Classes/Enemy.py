@@ -59,7 +59,7 @@ class Enemy(object):
     
     # Function that is called to deturmine what type of attack
     # the enemy will preform, or if the enemy will attempt to run. 
-    def attack(self, player):
+    def attack(self):
 
         if self.health <= 5 and self.run() is True:
             return -100

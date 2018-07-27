@@ -11,13 +11,13 @@
 # Imports needed for the program. Both imports points to created classes
 from Classes.Player import Player
 from Classes.Game import Game
+from Classes.Terminal_Commands import Terminal
 
 # Local variables 
 difficulty = 0
 player = Player()
-
+Terminal.clear_CLI()
 # Welcome message
-print("\n")
 print("Welcome to the RPG Battle Sim 2018!")
 print("Please create your player! \n\n")
 
@@ -25,13 +25,13 @@ print("Please create your player! \n\n")
 player.create_player()
 
 # Asks the user to select the level of difficulty. 
-print("")
 difficulty = input("Please select a level of difficulty. \n"
                    + "1. Easy\n"
                    + "2. Normal\n"
                    + "3. Hard\n"
                    + "4. Extreme\n")
 
+Terminal.clear_CLI()
 # While loop that contines until the player currectly creates a character.
 cont = False
 while cont is False:
@@ -48,7 +48,7 @@ while cont is False:
             player.create_player()
         elif user_in is 'n' or 'N':
             cont = True
-
+Terminal.clear_CLI()
 # Once the players character is created to the players liking the game will begin. 
 game = Game(difficulty, player)
 

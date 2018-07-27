@@ -6,16 +6,19 @@
                     The play_game function is called from the main file. This function
                     controls the back and forth of the turn style battle simulation.
 
-    Todo:           1. Restructure the play_game function. -- Complete/ Needs testing
+    Todo:           1. Restructure the play_game function. 
+                        -- Complete
                     2. Pull the text that is in the play_game function to a seperate 
-                       function to reduce the size of the play_game function. -- Complete/ Needs testing
-                    3. Add in clear CLI commands to keep the screen clear to increase readablity of the 
-                       prgram as the player makes choices. 
+                       function to reduce the size of the play_game function. 
+                        -- Complete
+                    3. Add in clear CLI commands to keep the screen clear to increase readability of the
+                       program as the player makes choices. 
+                        -- Inprogress
 """
 
 # Import statements that is needed for the functions. 
 from .Enemy import Enemy
-from .Terminal import Terminal
+from .Terminal_Commands import Terminal
 import random
 
 
@@ -44,7 +47,7 @@ class Game(object):
         elif diff is '4':
             self.enemy = Enemy(130, 30, 50, rand)
 
-    # The play game function is the main funciton that controls the 
+    # The play game function is the main function that controls the
     # back and forth. The text and controls for the fight until the 
     # player wins or one of the characters runs from the fight.  
     def play_game(self):
@@ -56,7 +59,7 @@ class Game(object):
 
         rand = random.randint(0, 100)
 
-        # This if statment is used to deturmine if the player or the 
+        # This if statement is used to determine if the player or the
         # enemy will attack first. 
         if rand <= 80:
 
@@ -66,8 +69,8 @@ class Game(object):
             # dies, or runs away from the fight. 
             while winner is False:
 
-                print_menu()
-                player_turn()
+                self.print_menu()
+                self.player_turn()
                 self.enemy.attack()
         else:
             
@@ -76,12 +79,12 @@ class Game(object):
             while winner is False:
 
                 self.enemy.attack()
-                print_menu()
-                player_turn()
+                self.print_menu()
+                self.player_turn()
 
     # This function will take the input from the player and 
     # preform the action that the player selects. 
-    def player_turn():
+    def player_turn(self):
         
         user_input = input("Please make a selection.\n")
         Terminal.clear_CLI()
@@ -97,7 +100,7 @@ class Game(object):
     
     
     # This function prints the menu to the player. 
-    def print_menu():
+    def print_menu(self):
 
         print("Your turn to attack")
         print("Current health -", self.player.health)
@@ -108,11 +111,11 @@ class Game(object):
         print("3. Run")
     
     
-    # The runt function in this scop will call the players run function,
-    # if the players run function returns true then a statment of success 
+    # The runt function in this scope will call the players run function,
+    # if the players run function returns true then a statement of success
     # is shown to the player. If not then the player is shown a different 
     # message and then checks to see if the player is dead.                 
-    def attempt_run():
+    def attempt_run(self):
         can_run = self.player.run()
         if can_run is True:
             print("You are able to get away. But you have been banned from the arena!!\n")
