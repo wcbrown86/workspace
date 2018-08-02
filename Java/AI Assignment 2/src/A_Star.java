@@ -6,7 +6,8 @@ import java.util.Scanner;
  */
 public class A_Star {
 
-	private static int size = 15; 
+	private static int size = 15;
+	public static GameBoard board; 
 	
 	/**
 	 * @param args
@@ -14,8 +15,13 @@ public class A_Star {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		
-		GameBoard board = new GameBoard(size);
+		board = new GameBoard(size);
 		board.print();
+		showMenu();
+		
+	}
+
+	public static void showMenu(){
 		char cont = 'N';
 		
 		while(cont == 'N'){
