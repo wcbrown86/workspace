@@ -45,7 +45,7 @@ public class Server {
 				
 				int selection = 0;
 				//Waits for player one to enter valid selection
-				if(!playerOneStand)
+				if(playerOneInput.hasNextInt() && !playerOneStand)
 					selection = playerOneInput.nextInt();
 				else
 					selection = 0;
@@ -61,7 +61,7 @@ public class Server {
 					case 2:
 						//updates the player stand state
 						playerOneStand = true;
-						playerOneOutput.println("PLayer One stands");
+						playerOneOutput.println("Player One stands");
 						 break;
 					default:
 						 break;
@@ -76,7 +76,7 @@ public class Server {
 					systemOutput.println("continue");
 				
 				//Looks for player two to enter selection if the player is still playing
-				if(!playerTwoStand)
+				if(playerTwoInput.hasNextInt() && !playerOneStand)
 					selection = playerTwoInput.nextInt();
 				else 
 					selection = 0;
@@ -117,6 +117,7 @@ public class Server {
 			
 			//Closes open connections
 			serverSocket.close();
+			
 			playerOne.close();
 			playerOneInput.close();
 			playerOneOutput.close();
