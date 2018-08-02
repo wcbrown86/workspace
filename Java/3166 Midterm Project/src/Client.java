@@ -1,3 +1,25 @@
+/*
+**	Author: William Chad Brown
+**
+**  Date: ?
+**
+** 	Description: 	This Class is the client side of a simple Blackjack game. This
+**					game starts both players at a score of 0, and does not take into account
+**					the starting deal and unknown card value that is seen in a normal game
+**					of Blackjack. Both players use the same screen, and it does not support
+**					multiple seesions logging in to play. The point was to of this project
+**					was to demonstate knowlage of sockets. 
+**
+**  TODO:			1. The program does not end, when the game is complete the program does 
+**					   does not exit or prompt the user to contine. 
+**
+**					2. Server needs to show the running score and show the status of the player
+**
+**					3. Needs to double check formatting and work in a system to clean up the screen.
+**
+*/
+
+//Imports
 import java.io.IOException;
 import java.io.PrintStream;
 import java.net.Socket;
@@ -102,7 +124,10 @@ public class Client {
 	private static void getInput() {
 
 		//get the users input
-		userSelection = userInput.nextInt();
+		if(userInput.hasNextInt())
+			userSelection = userInput.nextInt();
+		else
+			userSelection = 0;
 		
 		//Loops if the users input is invalid until a valid entry is made
 		while(userSelection != 1 && userSelection != 2){
