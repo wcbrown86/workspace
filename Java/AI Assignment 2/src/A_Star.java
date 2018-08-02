@@ -3,6 +3,16 @@ import java.util.Scanner;
 /**
  * @author williambrown
  *
+ * Discription:	This is a program that will implement the A Star search algorithm.
+ * 				This search will be preformed on a 2d Node array. When the program 
+ * 				starts a default board of 15x15 with a set start and goal location.
+ * 				The user is then prompted to either change the start/goal, both, or 
+ * 				continue. 
+ * 
+ * TODO:		1. Implement A Start search algorithm.....
+ * 
+ * 				2. Update menu to allow the user to set the size of the grid and a 
+ * 				   start and goal location. Or to create a random one of size 15. 
  */
 public class A_Star {
 
@@ -10,10 +20,12 @@ public class A_Star {
 	public static GameBoard board; 
 	
 	/**
+	 * Main method for the program. A new board of size 15x15 is created. The 
+	 * board is printed and then the menu is shown to the user. 
+	 * 
 	 * @param args
 	 */
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
 		
 		board = new GameBoard(size);
 		board.print();
@@ -21,6 +33,11 @@ public class A_Star {
 		
 	}
 
+	/**
+	 * The show menu function is used to allow the user to change the start, end, or both locations. 
+	 * If the user does not want to change any other the locations then the user can select continue. 
+	 * If the user continues the search will start. 
+	 */
 	public static void showMenu(){
 		char cont = 'N';
 		
