@@ -44,8 +44,11 @@ public class Flight {
 					System.out.println("Please enter the number of passengers traveling together up to 2 passengers:");
 					int passengers = Integer.parseInt(userInput.nextLine());
 					System.out.println("PLease enter the seating preference: Aisle or Window.");
-					String seating = userInput.nextLine();
-					System.out.println(plane.findSeatsFirst(passengers, seating));
+					String seating = userInput.nextLine().trim();
+					if(seating.toUpperCase().equals("WINDOW") || seating.toUpperCase().equals("AISLE"))
+						System.out.println(plane.findSeatsFirst(passengers, seating.toUpperCase().charAt(0)));
+					else
+						System.out.println("Incorrect selection.");
 				}
 				break;
 			
@@ -76,6 +79,10 @@ public class Flight {
 			System.out.println("");
 		}
 		
+	}
+	
+	private void clear() {
+		System.out.print("\033[H\033[2J");
 	}
 
 }
