@@ -8,7 +8,8 @@
  * 			two seats are on each side. The remaining 15 rows, will be classified as 
  * 			economy. These will have three seats on each side. 
  * 
- * TODO: 	None at this time.
+ * TODO: 	1. Re-factor findSeatsEconomy to be similar to findSeatsFirst. This function
+ * 			   contains repeated code that can be simplified and made reusable. 
  *
  */
 public class Airplane {
