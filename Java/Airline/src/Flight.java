@@ -1,14 +1,32 @@
+/**
+ * @author William Chad Brown
+ * 
+ * Description:	This is the main class for the Airplane program. It controls the flow of the 
+ * 				menu and the users progression in the program. 
+ * 
+ */
+
+// Scanner import is used to pull user input from the console. 
 import java.util.Scanner;
 
 public class Flight {
 
+	// Global variables that store the information of the user input.
+	// And the state of the current plane.
 	static Scanner userInput = new Scanner(System.in);
 	static Airplane plane;
+	
+	// Constants that store the size of the plane and are used as
+	// the sizes for the 2d array of the plane. 
 	public static final int ROW = 20;
 	public static final int SEAT = 8;
 	
+	/**
+	 * Constructor for the Flight class, when called a new Airplane 
+	 * object is created. no parameters are required. 
+	 */
 	public Flight() {
-		// TODO Auto-generated constructor stub
+
 		plane = new Airplane();
 		
 	}
@@ -126,9 +144,11 @@ public class Flight {
 	
 	
 	/**
+	 * This function is used to turn a string into an integer if possible.
 	 * 
-	 * @param i
-	 * @return
+	 * @param i - a string that could represent a integer. 
+	 * @return - if the string can be parsed to an integer it returns the 
+	 * 			 integer value. If it can not the function will return a -1.
 	 */
 	private static int parseInt(String i) {
 		int num = 0;
