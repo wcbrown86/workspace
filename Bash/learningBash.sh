@@ -3,8 +3,11 @@
 # $# is the number of arguments passed to the sript
 # $* is all of the arguments passed. 
 
-printf "Please Enter your name: "
 
-read user_input
-
-printf "Hello, $user_input \n"
+if [ "$#" -eq "0" ]; then 
+    printf "Please Enter your name: "
+    read user_input
+    printf "Hello, $user_input \n"
+    else 
+        printf "Hello, $1 \n"
+fi

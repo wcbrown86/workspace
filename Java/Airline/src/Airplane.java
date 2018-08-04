@@ -8,8 +8,7 @@
  * 			two seats are on each side. The remaining 15 rows, will be classified as 
  * 			economy. These will have three seats on each side. 
  * 
- * TODO: 	1. Re-factor findSeatsEconomy to be similar to findSeatsFirst. This function
- * 			   contains repeated code that can be simplified and made reusable. 
+ * TODO: 	None at this time.
  *
  */
 public class Airplane {
@@ -50,234 +49,162 @@ public class Airplane {
 		return seating[i][j].getVisual();
 	}
 	
+	
 	/**
 	 * This function takes two parameters and then locates open seats that fit the users selection.
 	 * the program will not split up passengers that are traveling together. If the user is looking
 	 * for more than one seat at a time the program will look for that amount of seats that are together
 	 * on the same row and on the same side of the plane. 
 	 * 
-	 * @param passengers - The number of passengers that are traveling together. for first class
+	 * @param numPassengers - The number of passengers that are traveling together. for first class
 	 * 					   this will be 0 > x < 4
 	 * 
-	 * @param seating2 - Is a string that identifies if the seat will be a window, middle, or aisle 
+	 * @param seatType - Is a string that identifies if the seat will be a window, middle, or aisle 
 	 * 				 	 seat. 
 	 * 
 	 * @return - A string containing the location information about the seat/s. If three passengers 
 	 * 			are traveling together then the location of the seat will not matter due to the program
 	 * 			will not split up the passengers that are traveling together. If no seats are found, the 
 	 * 			return message will read 'No seats found.'.
-	 * 
-	 * TODO: Need to re-factor this function to reduce the amount of reused code. 
 	 */
-	public String findSeatsEconomy(int passengers, String seating2) {
+	public String findSeatsEconomy(int numPassengers, char seatType) {
+		
+		// Local variables. message is the return variable that is used to send the seat
+		// information to the calling function. 
 		String message = "No seat found. ";
+
+		// Logic for finding open seats. The logic is different for 1 passenger, 2 passengers
+		// and 3 passengers. 
+		if(numPassengers == 1){
+			
+			// The program loops through each column, looking at each column checking just the related seats. It checks to see
+			// if the seat is the correct location (window, middle, or aisle) and that the seat is open. 
+			for(int i = 0; i < 15; i++){
+				// Switch case picks the correct loop based off the seat selection
+				switch(seatType) {
+				//For window seats. The program looks at each row, looking at just seat A and seat F.
+				//the row numbers in the array are hard coded. 
+				case 'W':
+					// Checks seat A on the right side of the plane an if an empty seat is found the 
+					// location is returned and the status is changed to full. 
+					if(!seating[1][i].getStatus()){
+						message = "Seat found. " + (20 - i) + seating[1][i].getVisual();
+						seating[1][i].setStatusFilled();
+						return message;
+					//Checks seat F on the left side of the plane an if an empty seat is found the 
+					// location is returned and the status is changed to full.
+					} else if(!seating[7][i].getStatus()) {
+						message = "Seat found. " + (20 - i) + seating[7][i].getVisual();
+						seating[7][i].setStatusFilled();
+						return message;
+					}
+					break;
+				case 'M':
+					// Checks seat B on the right side of the plane an if an empty seat is found the 
+					// location is returned and the status is changed to full.
+					if(!seating[2][i].getStatus()){
+						message = "Seat found. " + (20 - i) + seating[2][i].getVisual();
+						seating[2][i].setStatusFilled();
+						return message;
+					// Checks seat E on the left side of the plane an if an empty seat is found the 
+					// location is returned and the status is changed to full.
+					} else if(!seating[6][i].getStatus()) {
+						message = "Seat found. " + (20 - i) + seating[6][i].getVisual();
+						seating[6][i].setStatusFilled();
+						return message;
+					}
+					break;
+				case 'A':
+					// Checks seat C on the right side of the plane an if an empty seat is found the 
+					// location is returned and the status is changed to full.
+					if(!seating[3][i].getStatus()){
+						message = "Seat found. " + (20 - i) + seating[3][i].getVisual();
+						seating[3][i].setStatusFilled();
+						return message;
+					// Checks seat D on the left side of the plane an if an empty seat is found the 
+					// location is returned and the status is changed to full.
+					} else if(!seating[5][i].getStatus()) {
+						message = "Seat found. " + (20 - i) + seating[5][i].getVisual();
+						seating[5][i].setStatusFilled();
+						return message;
+					}
+					break;
+				}
+			}
+		// In the case of 2 passengers, the user is only given two options for seat choice, window and aisle. 
+		// This is due to the fact the program is only set up to keep the two seats together. So in the case of 
+		// two passengers the middle seat will always be apart of the solution. 
+		} else if(numPassengers == 2) {
+			for(int i = 0; i < 15; i++) {
+				// Switch case picks the correct loop based off the seat selection
+				switch(seatType) {
+				case 'W':
+					// Checks the window and middle seat on the right side of the plane (A and B). If two open seats
+					// are found then the location is returned and the status is set to filled. 
+					if(!seating[1][i].getStatus() && !seating[2][i].getStatus()){
+						message = "Seat found. " + (20 - i) + seating[1][i].getVisual() + "and seat "  +  (20 - i) + seating[2][i].getVisual();
+						seating[1][i].setStatusFilled();
+						seating[2][i].setStatusFilled();
+						return message;
+					// Checks the window and middle seat on the left side of the plane (E and F). If two open seats
+					// are found then the location is returned and the status is set to filled.
+					} else if(!seating[6][i].getStatus() && !seating[7][i].getStatus()) {
+						message = "Seat found. " + (20 - i) + seating[6][i].getVisual() + "and seat "  +  (20 - i) + seating[7][i].getVisual();
+						seating[6][i].setStatusFilled();
+						seating[7][i].setStatusFilled();
+						return message;
+					}
+					break;
+				case 'A':
+					// Checks the aisle and middle seat on the right side of the plane (B and C). If two open seats
+					// are found then the location is returned and the status is set to filled.
+					if(!seating[2][i].getStatus() && !seating[3][i].getStatus()){
+						message = "Seat found. " + (20 - i) + seating[2][i].getVisual() + "and seat "  +  (20 - i) + seating[3][i].getVisual();
+						seating[2][i].setStatusFilled();
+						seating[3][i].setStatusFilled();
+						return message;
+					// Checks the aisle and middle seat on the right side of the plane (D and E). If two open seats
+					// are found then the location is returned and the status is set to filled.
+					} else if(!seating[5][i].getStatus() && !seating[6][i].getStatus()) {
+						message = "Seat found. " + (20 - i) + seating[5][i].getVisual() + "and seat "  +  (20 - i) + seating[6][i].getVisual();
+						seating[5][i].setStatusFilled();
+						seating[6][i].setStatusFilled();
+					}
+					break;
+				}
+			}
 		
-		switch(seating2.toLowerCase()){
-		case "window":
-			if(passengers == 1){
-				for(int i = 0; i < 5; i++){
-					for(int j = 0; j < ROW && j < 15; j++){
-						if(seating[i][j].getPosition() == 'W' && !seating[i][j].getStatus()){
-							message = "Seat found. " + (20 - j) + seating[i][j].getVisual();
-							seating[i][j].setStatusFilled();
-							return message;
-
-						}
-					}
+		// The logic for three passengers does not take into account for seat choice, since all the 
+		// seats are kept together. In this case the program checks each side for three seats open to 
+		// assign to the customer. 
+		} else if(numPassengers == 3) {
+			for(int i = 0; i < 15; i++){
+				// Checks the seats on the right side of the plane (A-C), if three seats are open together
+				// then the locations are returned and the status is set to filled. 
+				if(!seating[1][i].getStatus() && !seating[2][i].getStatus() && !seating[3][i].getStatus()){
+					message = "Seat found. " + (20 - i) +seating[1][i].getVisual() + ", "  +  (20 - i) + seating[2][i].getVisual() + ", "  
+						+  (20 - i) + seating[3][i].getVisual();
+					seating[1][i].setStatusFilled();
+					seating[2][i].setStatusFilled();
+					seating[3][i].setStatusFilled();
+					return message;
+				
+				// Checks the seats on the left side of the plane (A-C), if three seats are open together
+				// then the locations are returned and the status is set to filled.
+				} else if(!seating[5][i].getStatus() && !seating[6][i].getStatus() && !seating[7][i].getStatus()) {
+					message = "Seat found. " + (20 - i) +seating[5][i].getVisual() + ", "  +  (20 - i) + seating[6][i].getVisual() + ", "  
+							+  (20 - i) + seating[7][i].getVisual();
+						seating[5][i].setStatusFilled();
+						seating[6][i].setStatusFilled();
+						seating[7][i].setStatusFilled();
+						return message;
 				}
 			}
-			else if(passengers == 2){
-				for(int i = 1; i < SEAT; i++){
-					for(int j = 0; j < ROW && j < 15; j++){
-						switch(i){
-						case 1:
-							if(!seating[i][j].getStatus() && !seating[i + 1][j].getStatus()){
-								message = "Seat found. " + (20 - j) +seating[i][j].getVisual() + "and seat "  +  (20 - j) + seating[i + 1][j].getVisual();
-								seating[i][j].setStatusFilled();
-								seating[i + 1][j].setStatusFilled();
-								return message;
-							}
-							break;
-						case 7:
-							if(!seating[i][j].getStatus() && !seating[i - 1][j].getStatus()){
-								message = "Seat found. " + (20 - j) +seating[i][j].getVisual() + "and seat "  +  (20 - j) + seating[i - 1][j].getVisual();
-								seating[i][j].setStatusFilled();
-								seating[i - 1][j].setStatusFilled();
-								return message;
-							} 
-							break;
-						default:
-							break;
-						}
-					}
-				}
-			}
-			else if(passengers == 3){
-				for(int i = 1; i < SEAT; i++){
-					for(int j = 0; j < ROW && j < 15; j++){
-						switch(i){
-						case 1:
-							if(!seating[i][j].getStatus() && !seating[i + 1][j].getStatus() && !seating[i + 2][j].getStatus()){
-								message = "Seat found. " + (20 - j) +seating[i][j].getVisual() + ", "  +  (20 - j) + seating[i + 1][j].getVisual() + ", "  
-									+  (20 - j) + seating[i + 2][j].getVisual();
-								seating[i][j].setStatusFilled();
-								seating[i + 1][j].setStatusFilled();
-								seating[i + 2][j].setStatusFilled();
-								return message;
-							}
-							break;
-						case 7:
-							if(!seating[i][j].getStatus() && !seating[i - 1][j].getStatus() && !seating[i - 2][j].getStatus()){
-								message = "Seat found. " + (20 - j) +seating[i][j].getVisual() + ", "  +  (20 - j) + seating[i - 1][j].getVisual() + ", "  
-									+  (20 - j) + seating[i - 2][j].getVisual();
-								seating[i][j].setStatusFilled();
-								seating[i - 2][j].setStatusFilled();
-								seating[i - 1][j].setStatusFilled();
-								return message;
-							}
-							break;
-						default:
-							break;
-						}
-					}
-				}
-			}
-			break;
-		case "middle":
-			if(passengers == 1){
-				for(int i = 0; i < SEAT; i++){
-					for(int j = 0; j < ROW && j < 15; j++){
-						if(seating[i][j].getPosition() == 'M' && !seating[i][j].getStatus()){
-							message = "Seat found. " + (20 - j) + seating[i][j].getVisual();
-							seating[i][j].setStatusFilled();
-							return message;
-
-						}
-					}
-				}
-			}
-			else if(passengers == 2){
-				for(int i = 1; i < SEAT; i++){
-					for(int j = 0; j < ROW && j < 15; j++){
-						switch(i){
-						case 2: case 6:
-							if(!seating[i][j].getStatus() && !seating[i + 1][j].getStatus()){
-								message = "Seat found. " + (20 - j) +seating[i][j].getVisual() + "and seat "  +  (20 - j) + seating[i + 1][j].getVisual();
-								seating[i][j].setStatusFilled();
-								seating[i + 1][j].setStatusFilled();
-								return message;
-							}
-							else if(!seating[i][j].getStatus() && !seating[i - 1][j].getStatus()){
-								message = "Seat found. " + (20 - j) +seating[i][j].getVisual() + "and seat "  +  (20 - j) + seating[i - 1][j].getVisual();
-								seating[i][j].setStatusFilled();
-								seating[i - 1][j].setStatusFilled();
-								return message;
-							}
-							break;
-						default:
-							break;
-						}
-					}
-				}
-			}
-			else if(passengers == 3){
-				for(int i = 1; i < SEAT; i++){
-					for(int j = 0; j < ROW && j < 15; j++){
-						switch(i){
-						case 2: case 6:
-							if(!seating[i][j].getStatus() && !seating[i + 1][j].getStatus() && !seating[i - 1][j].getStatus()){
-								message = "Seat found. " + (20 - j) +seating[i][j].getVisual() + ", "  +  (20 - j) + seating[i + 1][j].getVisual() + ", "  
-									+  (20 - j) + seating[i - 1][j].getVisual();
-								seating[i][j].setStatusFilled();
-								seating[i + 1][j].setStatusFilled();
-								seating[i - 1][j].setStatusFilled();
-								return message;
-							}
-							break;
-						default:
-							break;
-						}
-					}
-				}
-			}
-			break;
-		case "aisle":
-			if(passengers == 1)
-				for(int i = 0; i < SEAT; i++){
-					for(int j = 0; j < ROW && j < 15; j++){
-						if(seating[i][j].getPosition() == 'A' && !seating[i][j].getStatus()){
-							message = "Seat found. " + (20 - j) + seating[i][j].getVisual();
-							seating[i][j].setStatusFilled();
-							return message;
-						}
-					}
-				}
-			else if(passengers == 2){
-				for(int i = 1; i < SEAT; i++){
-					for(int j = 0; j < ROW && j < 15; j++){
-						switch(i){
-						case 3:
-							if(!seating[i][j].getStatus() && !seating[i - 1][j].getStatus()){
-								message = "Seat found. " + (20 - j) +seating[i][j].getVisual() + "and seat "  +  (20 - j) + seating[i - 1][j].getVisual();
-								seating[i][j].setStatusFilled();
-								seating[i - 1][j].setStatusFilled();
-								return message;
-							} 
-							break;
-						case 5:
-							if(!seating[i][j].getStatus() && !seating[i + 1][j].getStatus()){
-								message = "Seat found. " + (20 - j) +seating[i][j].getVisual() + "and seat "  +  (20 - j) + seating[i + 1][j].getVisual();
-								seating[i][j].setStatusFilled();
-								seating[i + 1][j].setStatusFilled();
-								return message;
-							}
-							break;
-						default:
-							break;
-						}
-					}
-				}
-			}
-			else if(passengers == 3){
-				for(int i = 1; i < SEAT; i++){
-					for(int j = 0; j < ROW && j < 15; j++){
-						switch(i){
-						case 3:
-							if(!seating[i][j].getStatus() && !seating[i - 1][j].getStatus() && !seating[i - 2][j].getStatus()){
-								message = "Seat found. " + (20 - j) +seating[i][j].getVisual() + ", "  +  (20 - j) + seating[i - 1][j].getVisual() + ", "  
-									+  (20 - j) + seating[i - 2][j].getVisual();
-								seating[i][j].setStatusFilled();
-								seating[i - 2][j].setStatusFilled();
-								seating[i - 1][j].setStatusFilled();
-								return message;
-							}
-							break;
-						case 5:
-							if(!seating[i][j].getStatus() && !seating[i + 1][j].getStatus() && !seating[i + 2][j].getStatus()){
-								message = "Seat found. " + (20 - j) +seating[i][j].getVisual() + ", "  +  (20 - j) + seating[i + 1][j].getVisual() + ", "  
-									+  (20 - j) + seating[i + 2][j].getVisual();
-								seating[i][j].setStatusFilled();
-								seating[i + 1][j].setStatusFilled();
-								seating[i + 2][j].setStatusFilled();
-								return message;
-							}
-							break;
-						default:
-							break;
-						}
-					}
-				}
-			}
-			break;
-		default:
-			message = "Incorrect Seat option picked.";
-			break;		
 		}
-		
 		return message;
 	}
 	
-	
+
 	/**
 	 * This function takes two parameters that is needed to locate a seat of the users selection. The program
 	 * will not split up passengers that are traveling together. So even if two seats are open, if they are not 
