@@ -1,10 +1,17 @@
-/*
- * Assignment 1 
- * William Chad Brown
+/**
  * 
- * Driver class that is used to parse the information in the file,
- * and place the information in the desired data structures. 
- * the main method calls the methods needed to complete the assignment.
+ * @author William Chad Brown
+ * 
+ * Date: June, 2017
+ * 
+ * Description:	Driver class that is used to parse the information in the file, movies.csp
+ * 				and place the information into the desired data structures. In this case the 
+ * 				program will use a HashMap with a key of a char and the values will be an ArrayList
+ * 				of type String. The Key is used to store movies titles in alphabetical order. and the
+ * 				values is a list of all the movies who's title starts with that letter. This program does
+ * 				not take into account "The" in a title. So all movies starting with "The" will be stored 
+ * 				under the key value of 'T'. 
+ *
  */
 
 import java.io.BufferedReader;
@@ -16,7 +23,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 
-public class InClassOn {
+public class Main {
 	
 	public static ArrayList<Movie> movieList = new ArrayList<Movie>();
 	public static HashMap<Character, ArrayList<String>> movieMap = new HashMap<Character, ArrayList<String>>();
@@ -30,9 +37,9 @@ public class InClassOn {
 		parseMovie();
 		//Prints out the list information by year descending order
 		System.out.println("Movies Listed by Year in Descending Order");
-		printGrossSalesDecendingOrder();
+		printYearDecendingOrder();
 		//Prints out the list where movies are listed by the fist letter, no order.
-		System.out.println("\nMovies listed by the first letter of there title");
+		System.out.println("Movies listed by the first letter of there title");
 		printMoviesAlphbeticly();
 
 	}
@@ -95,12 +102,13 @@ public class InClassOn {
 			}
 			//Adds another value to the key if already created. 
 			movieMap.get(key).add(title);
+			
 		}
 		
 	}
 	
 	//Sorts the ArrayList in descending order and prints the information
-	private static void printGrossSalesDecendingOrder(){
+	private static void printYearDecendingOrder(){
 		
 		//uses the Collections.sort, calls the compareTo method in the Movie Class
 		Collections.sort(movieList);
@@ -115,6 +123,7 @@ public class InClassOn {
 	//Prints the HashMap to the screen with the key. 
 	private static void printMoviesAlphbeticly() {
 		//for loop that prints the key then the information in the ArraryList
+		
 		for(Map.Entry<Character, ArrayList<String>> movie : movieMap.entrySet()){
 			String key = movie.getKey().toString().toUpperCase();
 			System.out.print(key + ": ");
@@ -125,7 +134,7 @@ public class InClassOn {
 				
 				System.out.print(str + ", ");
 				}
-			//If only one item this will pring just the one item
+			//If only one item this will print just the one item
 			}else{
 				System.out.print(movieTitle.get(0));
 			}
