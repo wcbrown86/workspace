@@ -19,22 +19,22 @@
 import javax.swing.JFrame;
 
 public class TutorViewer{
-	
+
 	public static void main(String[] args){
 
 		// Creates a new frame for the program.
 		JFrame frame = new TutorFrame();
-		
+
 		// Sets the close button operation to exit the program.
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		
+
 		// Sets the title and other options for location of the frame 
 		frame.setTitle("Math Tutor!!");
-		
+
 		// Code to set the location of the frame at start to the center of the screen
 		frame.pack();
 		frame.setLocationRelativeTo(null);
-		
+
 		// Makes the frame visible to the user. 
 		frame.setVisible(true);
 	}

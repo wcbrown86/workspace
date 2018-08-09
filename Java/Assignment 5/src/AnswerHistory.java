@@ -10,7 +10,7 @@
  */
 
 public class AnswerHistory {
-	
+
 	// Global variables 
 	private int numbOne;
 	private int numbTwo;
@@ -29,12 +29,12 @@ public class AnswerHistory {
 	 * 
 	 */
 	public AnswerHistory(int x, int y, int option, int answer, boolean isCorrect){
-		
+
 		numbOne = x;
 		numbTwo = y;
 		optionSelected = option;
 		userAnswer = answer;
-		
+
 		// String that is used to print to the frame if the user was correct. 
 		if(isCorrect)
 			userCorrect = "Correct!!";
@@ -52,9 +52,9 @@ public class AnswerHistory {
 	 * 
 	 */
 	public String toString(){
-		
+
 		switch(optionSelected){
-		
+
 		// Case for addition. 
 		case 0:
 			return String.format("%d + %d = %d, Your answser %d was %s", numbOne, numbTwo, numbOne + numbTwo, userAnswer, userCorrect);
@@ -65,11 +65,11 @@ public class AnswerHistory {
 				return String.format("%d - %d = %d, Your answser %d was %s", numbOne, numbTwo, numbOne - numbTwo, userAnswer, userCorrect);
 			else
 				return String.format("%d - %d = %d, Your answser %d was %s", numbTwo, numbOne, numbTwo - numbOne, userAnswer, userCorrect);
-		
+
 		// Case for multiplication.
 		case 2:
 			return String.format("%d * %d = %d, Your answser %d was %s", numbOne, numbTwo, numbOne * numbTwo, userAnswer, userCorrect);
-			
+
 		// Case for division. This will set the numbers so the user does not run into fractions/decimal answers. 
 		case 3:
 			if(numbOne > numbTwo)
