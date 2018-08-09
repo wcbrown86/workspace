@@ -7,6 +7,8 @@
  * 				down option for difficulty and operation. Finally there is a history button to will 
  * 				show the user the questions answered and if you where correct or not. If the user
  * 				did not put in the correct answer the history will show the user the correct answer. 
+ * 				This program does not work with negative numbers or negative answers. And it does not
+ * 				account for fractions or decimal answers for division. 
  * 
  * 				This class is the main driver for the program, and only calls the needed classes for
  * 				the program to function. 
