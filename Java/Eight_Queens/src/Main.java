@@ -38,7 +38,7 @@ public class Main {
 		
 		// Heuristic is used to find a state of a board that is better
 		// than the current board. 
-		board.setHuristic(check.findHuristic());
+		board.setHeuristic(check.findHeuristic());
 		
 		// Do While, loop that will keep the program running,
 		// until a solution is found. If the program gets to a 
@@ -55,7 +55,7 @@ public class Main {
 				System.out.println("Current State");
 				board.printBoard();
 				
-				// Tells the user how many state changes and restarts occured. 
+				// Tells the user how many state changes and restarts happend. 
 				System.out.println("Solution Found! \n"
 						+ "State Changes: " + changes + "\n"
 						+ "Restarts: " + restart);
@@ -72,7 +72,7 @@ public class Main {
 					int hold = test[i];
 					for(int j = 0; j < test.length; j++){
 						test[i] = j;
-						int h = check.findHuristic(test);
+						int h = check.findHeuristic(test);
 						if(h < board.getHuristic()){
 							newBoards.add(new GameBoard(test,h));
 						}
@@ -93,7 +93,7 @@ public class Main {
 							+ "RESTART\n\n");
 					restart++;
 					board.newBoard(size);
-					board.setHuristic(check.findHuristic(board.getQueens()));
+					board.setHeuristic(check.findHeuristic(board.getQueens()));
 					
 				// If other better states exist, find the one with the lowest heuristic and make 
 				// this the current board state. 
