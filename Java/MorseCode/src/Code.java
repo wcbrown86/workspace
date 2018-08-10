@@ -1,12 +1,11 @@
-import java.util.ArrayList;
+
+import java.util.HashMap;
+import java.util.Map;
 
 public class Code {
 
-	ArrayList<String> code = new ArrayList<String>();
-	
-	public Code() {
-		
-	}
+	//ArrayList<String> code = new ArrayList<String>();
+	Map<String, String> codeMap = new HashMap<String, String>();
 	
 	public String translate(String str){
 		
@@ -19,35 +18,29 @@ public class Code {
 			
 			if(temp[i] == ' ')
 				translated += "   ";
-			else 
-				for(int j = 0; j < code.size(); j++){
-					
-					if(temp[i] == code.get(j).charAt(0)){
-						String str2 = code.get(j);
-						translated += str2.substring(1, str2.length());
-					}
-				}
+			else if(codeMap.containsKey(String.valueOf(temp[i])))
+				translated += codeMap.get(String.valueOf(temp[i]));
 			
 		}
 		
 		return translated;
 	}
 	
-	public void add(String str){
+	public void add(String key, String value){
 		
-		code.add(str);
-		
-	}
-	
-	public void set(String str, int index){
-		
-		code.add(index, str);
+		codeMap.put(key, value);
 		
 	}
 	
-	public String get(int index){
+	public void set(String key, String value){
 		
-		return code.get(index);
+		codeMap.put(key, value);
+		
+	}
+	
+	public String get(String key){
+		
+		return codeMap.get(key);
 	}
 
 }
