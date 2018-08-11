@@ -3,11 +3,11 @@
  * @author - William Chad Brown
  * 
  * Description:	The Store class runs the program. This program is set up to simulate 
- * 				a line in a store. Where a new customer is added to the line randomly,
- * 				and the line is managed in a first in first out manner. Each customer has
- * 				a set wait time of 5 and once this time has elapsed the next customer in 
- * 				line is removed. The program loops 60 times currently, this is meant to 
- * 				simulate an hour of the store being open.  	
+ * 			a line in a store. Where a new customer is added to the line randomly,
+ * 			and the line is managed in a first in first out manner. Each customer has
+ * 			a set wait time of 5 and once this time has elapsed the next customer in 
+ * 			line is removed. The program loops 60 times currently, this is meant to 
+ * 			simulate an hour of the store being open.  	
  *   
  */
 
