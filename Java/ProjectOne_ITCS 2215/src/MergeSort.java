@@ -1,17 +1,25 @@
+/**
+ * 
+ * @author - William Chad Brown
+ * 
+ * Description:	This Class takes as an input a text file of numbers with each number on
+ * 				a separate file. This file is read in and put into an array, then sorted 
+ * 				using the merge sort method. A runtime is shown in minutes and seconds. 
+ * 				Then the sorted array is placed back into a text file with the same format.
+ * 
+ */
+
+ // Imports used to read and write to files. 
 import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.Scanner;
+
+// Imports used to report the time the program takes.
 import java.util.concurrent.TimeUnit;
 
-/*
- * This Class takes as an input a text file of numbers with each number on
- * a separate file. This file is read in and put into an array, then sorted 
- * using the merge sort method. A runtime is shown in seconds. Then the sorted array 
- * is placed back into a text file with the same format. 
- */
 public class MergeSort 
 {
 	
@@ -21,14 +29,13 @@ public class MergeSort
 		String fileName ="RandomNumber1000000.txt";
 		//The file to be read
 		Scanner file = new Scanner(new File(fileName));
-		//The file used to find out how large of an array to make
-		Scanner fileTest = new Scanner(new File(fileName));
+		Scanner fileSize = new Scanner(new File(fileName));
 
 		//Reads the number of lines in the file
 		int lines = 0;
-		while (fileTest.hasNextLine()){ 
+		while (fileSize.hasNextLine()){ 
 			lines++;
-			fileTest.nextLine();
+			fileSize.nextLine();
 		}
 		//Makes the Array
 		int[] array = new int[lines];
@@ -38,6 +45,11 @@ public class MergeSort
 
 			array[i] = file.nextInt();
 		}
+
+		// Closes the open file to help with memory managment. 
+		file.close();
+		fileSize.close();
+
 		//Saves the start time before running the sort
 		long start = System.currentTimeMillis();
 		//Runs the sort
@@ -55,6 +67,10 @@ public class MergeSort
 			output.write(Integer.toString(array[i]));
 			output.newLine();
 		}
+
+		// Clears the Buffer Output and closes the file.
+		output.flush();
+		output.close();
 	}
 	
 	//Sorts the array with a recursive call on mergeSort to make the array smaller
