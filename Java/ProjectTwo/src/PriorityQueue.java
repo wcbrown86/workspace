@@ -91,7 +91,7 @@ public class PriorityQueue
 
 	public PriorityCustomer current() {
 
-		return arr[1];
+		return arr[0];
 	}
 
 }
