@@ -21,6 +21,7 @@ public class RandomGenerator {
 	
 	// Global variable the stores the generated numbers.
 	private static int[] arr;
+	private String fileName;
 
 	/**
 	 * 
@@ -30,23 +31,27 @@ public class RandomGenerator {
 	 * programs. 
 	 * 
 	 */
-	public static void main(String[] args) throws IOException{
+	public RandomGenerator(){
 		
-		// Creates a new scanner to grab the user input from STDIN.
-		Scanner in = new Scanner(System.in);
+		try{
+			// Creates a new scanner to grab the user input from STDIN.
+			Scanner in = new Scanner(System.in);
 
-		// Asks the user for the number of random numbers to generate and stores that number 
-		// in the number variable. 
-		System.out.println("Please enter the number of random Integers you would like.");
-		int number = in.nextInt();
-		
-		// Calls the random number function to create a array of random number the size of the file.
-		arr = randomGenerator(number);
-		makeTextFile(arr);
-		System.out.println("The file RandomNumber" + arr.length + ".txt was created");
+			// Asks the user for the number of random numbers to generate and stores that number 
+			// in the number variable. 
+			System.out.println("Please enter the number of random Integers you would like.");
+			int number = in.nextInt();
+			
+			// Calls the random number function to create a array of random number the size of the file.
+			arr = randomGenerator(number);
+			makeTextFile(arr);
+			System.out.println("The file RandomNumber" + arr.length + ".txt was created\n");
 
-		// Closes the file to help with memory management.
-		in.close();
+			// Closes the file to help with memory management.
+			in.close();
+		} catch(Exception e){
+			System.out.println(e.toString());
+		}
 	}
 	
 	/**
@@ -58,21 +63,27 @@ public class RandomGenerator {
 	 * 				 written to a file.
 	 * 
 	 */
-	private static void makeTextFile(int[] arr2) throws IOException {
+	private void makeTextFile(int[] arr2) {
 		
-		// Creates a buffer to write the imformation to a file.
-		BufferedWriter output = null;
-		output = new BufferedWriter(new FileWriter("RandomNumber"+ arr2.length + ".txt"));
+		try{
+			// Creates a buffer to write the imformation to a file.
+			BufferedWriter output = null;
+			fileName = "RandomNumber"+ arr2.length + ".txt";
+			output = new BufferedWriter(new FileWriter(fileName));
 
-		// Writes the the file line by line.
-		for(int i = 0; i < arr2.length; i ++){
-			output.write(Integer.toString(arr2[i]));
-			output.newLine();
+			// Writes the the file line by line.
+			for(int i = 0; i < arr2.length; i ++){
+				output.write(Integer.toString(arr2[i]));
+				output.newLine();
+			}
+			
+			// Clears the buffer and closes the file. 
+			output.flush();
+			output.close();
+		} catch(Exception e){
+			System.out.println(e.toString());
+			System.exit(0);
 		}
-		
-		// Clears the buffer and closes the file. 
-		output.flush();
-		output.close();
 		
 		
 	}
@@ -100,5 +111,25 @@ public class RandomGenerator {
 		}
 		
 		return arr;
+	}
+
+	/**
+	 * 
+	 * Get method for the file name global variable.
+	 * 
+	 * @return - Returns a String that contains the name of the
+	 * 			 file to be sorted. 
+	 * 
+	 */
+	public String getFileName(){
+
+		return fileName;
+
+	}
+
+	public int[] getArray(){
+
+		return arr;
+
 	}
 }

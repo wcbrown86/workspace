@@ -1,36 +1,43 @@
-import java.io.*;
-import java.util.Scanner;
+/**
+ * 
+ * @author - William Chad Brown
+ * 
+ * Description:	
+ * 
+ * 
+ */
 public class SortingTest {
 	
-	public static void  main(String[] arrgs) throws FileNotFoundException{
+	public static void  main(String[] arrgs){
 		
-		String fileName ="";
-		Scanner file = new Scanner(new File(fileName));
+		RandomGenerator numberGenerator = new RandomGenerator();
+		checkArray(numberGenerator.getArray());
 		
-		int lines = 0;
-		while (file.hasNext() != false) lines++;
+		InsertionSort insertion = new InsertionSort(numberGenerator.getFileName());
+		int[] insertArrayCheck = insertion.getArray();
+		checkArray(insertArrayCheck);
 		
-		int[] array = new int[lines]; 
+		BubbleSort bubble = new BubbleSort(numberGenerator.getFileName());
+		int[] bubbleArrayCheck = bubble.getArray();
+		checkArray(bubbleArrayCheck);
+
+		MergeSort merge = new MergeSort(numberGenerator.getFileName());
+		int [] mergeSortCheck = merge.getArray();
+		checkArray(mergeSortCheck);
 		
-		for(int i = 0; i < array.length; i++){
+	}
+
+	public static void checkArray(int[] array){
+		
+		for(int i = 1; i < array.length; i++){
 			
-			array[i] = file.nextInt();
-			
-			long start = System.currentTimeMillis();
-			
-			long end = System.currentTimeMillis();
-			System.out.println(end - start);
-			
-			start = System.currentTimeMillis();
-			
-			end = System.currentTimeMillis();
-			System.out.println(end - start);
-			
-			start = System.currentTimeMillis();
-			
-			end = System.currentTimeMillis();
-			System.out.println(end - start);
+			if(array[i-1] > array[i]){
+				System.out.println("The array is not correctly sorted.\n");
+				return;
+			}
 		}
+
+		System.out.println("The array is sorted correctly.\n");
 	}
 
 }
