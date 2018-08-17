@@ -27,9 +27,9 @@ public class TreeDemo {
 		}
 		
 		System.out.println("---Searches---"); //Start multiple searches
-		myTree.search(words[rand.nextInt(16)]);
-		myTree.search(words[rand.nextInt(16)]);
-		myTree.search(words[rand.nextInt(16)]);
+		System.out.println(myTree.search(words[rand.nextInt(16)]));
+		System.out.println(myTree.search(words[rand.nextInt(16)]));
+		System.out.println(myTree.search(words[rand.nextInt(16)]));
 		
 		System.out.println("---Printing---"); //Print the tree using all 
 		myTree.printPreOrder();
