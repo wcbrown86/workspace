@@ -2,10 +2,11 @@
  * 
  * @author - William Chad Brown
  * 
- * Description:	This Class takes as an input a text file of numbers with each number on
+ * Description:	This Class takes as an input a string that is a text file of numbers with each number on
  * 				a separate file. This file is read in and put into an array, then sorted 
- * 				using the merge sort method. A runtime is shown in minutes and seconds. 
- * 				Then the sorted array is placed back into a text file with the same format.
+ * 				using the merge sort method. A runtime is shown in minutes, second, miliseconds. 
+ * 				Then the sorted array is placed back into a text file with the same format. This class
+ *              uses the Merge Sort algorithm to sort the file. 
  * 
  */
 
@@ -69,7 +70,7 @@ public class MergeSort
 			//Saves the end time 
 			long end = System.currentTimeMillis();
 
-			//Takes the start time and end time prints out in the seconds format
+			//Takes the start time and end time prints out in the minutes, seconds, miliseconds format
 			System.out.println(TimeUnit.MILLISECONDS.toMinutes(end - start) + " Minutes");
 			System.out.println(TimeUnit.MILLISECONDS.toSeconds(end - start) + " Seconds");
 			System.out.println(TimeUnit.MILLISECONDS.toMillis(end - start) + " Milliseconds\n");

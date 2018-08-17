@@ -36,6 +36,10 @@ public class SortingTest {
 		MergeSort merge = new MergeSort(numberGenerator.getFileName());
 		int [] mergeSortCheck = merge.getArray();
 		checkArray(mergeSortCheck);
+
+		QuickSort quick = new QuickSort(numberGenerator.getFileName());
+		int [] quickSortCheck = quick.getArray();
+		checkArray(quickSortCheck);
 		
 	}
 
