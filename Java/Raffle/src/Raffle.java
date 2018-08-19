@@ -43,14 +43,21 @@ public class Raffle {
 	 */
 	public static void main(String[] args) {
 		
+		// Charactor used to keep the program running until the user enters n at 
+		// the do you have more tickets to check prompt. 
 		char cont = 'Y';
 
 		
+		// Main outter loop used to check the program running until the user chooses to 
+		// exit. 
 		while (cont == 'Y'){
 			
+			// String variables used to stroe the user input, that is later placed into a 
+			// ticket object and added to the array. 
 			String ticketNumber = "";
 			String holdersName = "";
 
+			// loop that runs until the user enters a correct ticket number. 
 			do{
 				 
 				System.out.println("PLease enter the ticket number!");
@@ -58,6 +65,8 @@ public class Raffle {
 			
 			} while(!ticketNumber.matches("\\d{6}"));
 			
+			// loop that runs until the user enters a valid name. 
+			// meaning no numbers or special charactors in the name. 
 			do{
 
 				System.out.println("Please enter the ticket holders name!");
@@ -65,31 +74,39 @@ public class Raffle {
 
 			} while(!holdersName.matches("[a-zA-Z]+"));
 			
-
+			// Checks to see if the array can hold more items. if not then the array 
+			// size is increased. 
 			if(index < ticketArray.length)
 				ticketArray[index] = new Ticket(ticketNumber, holdersName);
 			else{
 				increaseSize();
 				ticketArray[index] = new Ticket(ticketNumber, holdersName);
 			}
-				
+			
+			// Checks to see if the ticket entered is a winner, and the user is
+			// updated of the tickets status. 
 			checkWinner(ticketArray[index]);
 			System.out.println(ticketArray[index].getWinner());
+
+			// Increments the index value.
 			index++;
 			
+			// Askes the user if they would like to continue. 
 			System.out.println("Do you have more teckets to check? Y/N");
 			cont = userInput.nextLine().toUpperCase().charAt(0);
 		}
 		
-		index = 0;
-		for(int i = 0; i < ticketArray.length && ticketArray[i] != null; i++)
-			checkWinner(ticketArray[i]);
-		
+		// Prints the ticket report the the user as the program ends. 
 		printArray();
 
 	}
 	
-	//Prints the Ticket numbers and if a prize is due to the console.
+	/**
+	 * 
+	 * Prints the Ticket numbers and if a prize is due to the console.
+	 * By listing the Ticket holders name, ticket number, and prize level. 
+	 * 
+	 */
 	private static void printArray() {
 		
 		for(int i = 0; i < ticketArray.length && ticketArray[i] != null; i++){
@@ -99,13 +116,17 @@ public class Raffle {
 		
 	}
 
-/*
- * First Prize – The six digit number on the ticket exactly matches the winning number.
- * Example: If the number on the ticket is 123456, it is a winner if the winning number is 123456.
- * 
- * Second Prize – The reverse of the 6 digit number on the ticket exactly matches the winning number.
- * Example: If the number on the ticket is 654321, it is a winner if the winning number is 123456. 
- */
+	/** 
+	 * 
+	 * First Prize – The six digit number on the ticket exactly matches the winning number.
+	 * Example: If the number on the ticket is 123456, it is a winner if the winning number is 123456.
+	 * 
+	 * Second Prize – The reverse of the 6 digit number on the ticket exactly matches the winning number.
+	 * Example: If the number on the ticket is 654321, it is a winner if the winning number is 123456. 
+	 * 
+	 * @param check - a Ticket object that needs to be checked if it is a winning ticket. 
+	 * 
+	 */
 	private static void checkWinner(Ticket check) {
 		
 		String number = check.getNumber();
@@ -126,13 +147,19 @@ public class Raffle {
 	 * Example: If the number on the ticket is 123456, it is a winner if the winning number has 123 in
 	 * positions 1 – 3, 234 in positions 2 – 4, 345 in positions 3 – 5, or 456 in positions 4 – 6.
 	 * 
-	 * @param check - 
+	 * @param check - A Ticket oject to be checked if it qualifies for the third prize place, this 
+	 * 				  prize will can be multiple tickets. 
 	 * 
 	 */
 	private static boolean thirdPrize(Ticket check) {
 		
+		// Character arrays used to hold the information 
+		// about the winning number and the number to be checked. 
 		char[] temp = check.getNumber().toCharArray();
 		char[] winner = winningNumber.toCharArray();
+
+		// Nested loops that look a three number in a row and see if they
+		// match in the two numbers that are comapaired. 
 		for(int i = 1; i <= 4; i++){
 			boolean isWinner = false; 
 			for(int j = i; j < (i+3) && j < temp.length + 1; j++){
@@ -151,7 +178,15 @@ public class Raffle {
 		return false;
 	}
 	
-	//Reverse the ticket number, then returns this number
+	/**
+	 * 
+	 * This fucntion takes a string and reveses the order of that string. 
+	 * 
+	 * @param winning - a String that needs to be reversed.
+	 * 
+	 * @return - a String that is a reversed version of the string passed
+	 * 			 to the function. 
+	 */
 	private static String stringReverse(String winning) {
 		char[] tempArray = winning.toCharArray();
 		String temp = ""; 
@@ -162,7 +197,14 @@ public class Raffle {
 		return temp;
 	}
 	
-	//Grows the size of the array if needed. Double each time.
+	/**
+	 * 
+	 * Takes the current global array that is used to store the 
+	 * tickets that where checked, and creates an array of double 
+	 * the size of the current array and transfers the information from 
+	 * the old array to the new array. 
+	 * 
+	 */
 	private static void increaseSize() {
 		
 		Ticket[] temp = new Ticket[ticketArray.length * 2];
