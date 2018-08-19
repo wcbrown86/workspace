@@ -122,7 +122,8 @@ VALUES('2', '300', '2');
 INSERT INTO Orderline
 VALUES('3', '850', '1');
 INSERT INTO Orderline
-VALUES(INSERT INTO Orderline
+VALUES('3', '200', '3');
+INSERT INTO Orderline
 VALUES('4', '200', '4');
 INSERT INTO Orderline
 VALUES('4', '100', '1');

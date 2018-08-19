@@ -8,11 +8,7 @@ public class Baltimore extends Inventory{
 	//sets the inventory of the parts
 	public Baltimore(int i102, int i215, int i410, int i525, int i711){
 		
-		item102 = i102;
-		item215 = i215;
-		item410 = i410;
-		item525 = i525;
-		item711 = i711;
+		super(i102, i215, i410, i525, i711);
 	}
 
 	//Prints the warehouse name and calls the inventory print method
