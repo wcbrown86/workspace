@@ -9,26 +9,38 @@
  * When all tickets have been processed, display the total number of first prize winners, 
  * second prize winners, and third prize winners.
  * 
- * Student: William Chad Brown
+ * @author - William Chad Brown
  * ID: 800816688
  * Date: 01/25/2016
  * Section: ITCS-3112-091
  * 
  */
+
+ // Import used to grab information from the user in the console from STDIN.
 import java.util.Scanner;
 
 public class Raffle {
 	
+	// An array that holds all the entered information from the user
 	static Ticket[] ticketArray = new Ticket[100]; 
+
+	// Input scanner that takes that input from the user
 	static Scanner userInput = new Scanner(System.in);
+
+	// An integer used to track the current item being added to the array
 	static int index = 0;
 	
 	//The winning number must be set here. 
 	static String winningNumber = "123456";
 	
-	//Asks the user for the ticket information, continues this loop until the user is done
-	//Once the user is done the system will check the numbers for winners, then prints 
-	//This information. 
+	/**
+	 * Asks the user for the ticket information, continues this loop until the user is done
+	 * after each ticket is entered the user will be told if the ticket is a winner. Once the
+	 * user is done with checking tickets the user will be given a report showing all the winners.
+	 * 
+	 * @param args - Main system input argumaents. this is not used on. 
+	 * 
+	 */
 	public static void main(String[] args) {
 		
 		char cont = 'Y';
@@ -36,12 +48,24 @@ public class Raffle {
 		
 		while (cont == 'Y'){
 			
-			System.out.println("PLease enter the ticket number!");
-			String ticketNumber = userInput.nextLine();
+			String ticketNumber = "";
+			String holdersName = "";
+
+			do{
+				 
+				System.out.println("PLease enter the ticket number!");
+				ticketNumber = userInput.nextLine();
 			
-			System.out.println("Please enter the ticket holders name!");
-			String holdersName = userInput.nextLine();
+			} while(!ticketNumber.matches("\\d{6}"));
 			
+			do{
+
+				System.out.println("Please enter the ticket holders name!");
+				holdersName = userInput.nextLine();
+
+			} while(!holdersName.matches("[a-zA-Z]+"));
+			
+
 			if(index < ticketArray.length)
 				ticketArray[index] = new Ticket(ticketNumber, holdersName);
 			else{
@@ -49,7 +73,8 @@ public class Raffle {
 				ticketArray[index] = new Ticket(ticketNumber, holdersName);
 			}
 				
-			
+			checkWinner(ticketArray[index]);
+			System.out.println(ticketArray[index].getWinner());
 			index++;
 			
 			System.out.println("Do you have more teckets to check? Y/N");
@@ -92,13 +117,18 @@ public class Raffle {
 			check.setWinner("Third Prize");
 		
 	}
-	/*
- 	* Third Prize – Any 3 sequential digits of the 6 digit number on the ticket exactly matches 3 sequential 
- 	* digits in the same position of the winning ticket.
- 	* Example: If the number on the ticket is 123456, it is a winner if the winning number has 123 in 
- 	* positions 1 – 3, 234 in positions 2 – 4, 345 in positions 3 – 5, or 456 in positions 4 – 6.
- 	*/
 
+	/**
+	 * 
+	 * Third Prize – Any 3 sequential digits of the 6 digit number on the ticket exactly matches 3 sequential
+	 * digits in the same position of the winning ticket.
+	 * 
+	 * Example: If the number on the ticket is 123456, it is a winner if the winning number has 123 in
+	 * positions 1 – 3, 234 in positions 2 – 4, 345 in positions 3 – 5, or 456 in positions 4 – 6.
+	 * 
+	 * @param check - 
+	 * 
+	 */
 	private static boolean thirdPrize(Ticket check) {
 		
 		char[] temp = check.getNumber().toCharArray();
