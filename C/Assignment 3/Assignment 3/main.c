@@ -2,7 +2,13 @@
 // Assignment 3 version 1
 //
 // By William Chad Brown
-// 800816688
+// 
+// Description: This program is intended to work with multiple processes. The program will
+//              preform a few simple opperations with a child process. Each time listing the
+//              child process ID and the parent process ID. The programm will give the user 
+//              four choices, to show the current date and time, show a calender, show the 
+//              current working directory, and to exit the program. Each opperation is preformed 
+//              with child process, and this information is shown. 
 //
 
 
@@ -21,6 +27,7 @@ int main() {
     // Force start the loop and ask the user for there choice
     do{
         
+        // Main menu is shown to the user. 
         printf("Parent process ID: %d, Parent's parent ID: %d \n",
                getpid(), getppid());
         printf("Choose the function to be preformed by the child. \n");
@@ -80,12 +87,16 @@ void processChoice(int userInput){
                 //prints the process ID's
                 printf("Child process ID: %ld; Parent ID: %ld",
                        (long)getpid(), (long)getppid());
+
                 //Formating
                 printf("\n");
+
                 //System call for date
                 system("date");
+
                 //formating
                 printf("\n\n");
+
                 //Ends the child process
                 exit(0);
             }
@@ -99,15 +110,20 @@ void processChoice(int userInput){
             
             //Checks to see if the process is the child
             if(child_pid == 0){
+
                 //prints the process ID's
                 printf("Child process ID: %ld; Parent ID: %ld",
                        (long)getpid(), (long)getppid());
+
                 //Formating
                 printf("\n");
+
                 //System call for date
                 system("cal");
+
                 //formating
                 printf("\n\n");
+
                 //Ends the child process
                 exit(0);
             }
@@ -121,15 +137,20 @@ void processChoice(int userInput){
             
             //Checks to see if the process is the child
             if(child_pid == 0){
+
                 //prints the process ID's
                 printf("Child process ID: %ld; Parent ID: %ld",
                        (long)getpid(), (long)getppid());
+
                 //Formating
                 printf("\n");
+
                 //System call for date
                 system("ls -l");
+
                 //formating
                 printf("\n\n");
+                
                 //Ends the child process
                 exit(0);
             }
