@@ -114,6 +114,8 @@ public class InventoryManagment {
 				Integer.parseInt(fStart[3]),
 				Integer.parseInt(fStart[4])));
 
+			System.out.println("Starting Warehouse Inventory.");
+
 			//Prints the beginning inventory
 			for(Inventory inv: warehouses){
 				inv.printInventory();
@@ -151,7 +153,7 @@ public class InventoryManagment {
 
 		try{
 			//Opens the transaction file 
-			fileReader = new Scanner(new File(fileNameTrans));
+			Scanner fileReader = new Scanner(new File(fileNameTrans));
 
 
 			
@@ -176,6 +178,8 @@ public class InventoryManagment {
 					warehouses.get(warehouse).sellItem(Integer.parseInt(transaction[1]),  Integer.parseInt(transaction[2]));
 				}
 			}
+
+			System.out.println("Ending Warehouse Inventory.");
 			
 			//Prints the inventory at the end of the day
 			for(Inventory inv: warehouses){
