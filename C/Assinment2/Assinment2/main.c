@@ -1,4 +1,18 @@
-/* Operating and maintaining a list */
+/**
+ * 
+ * Author:      William Chad Brown
+ * 
+ * Description: This program takes a file and formats it so that each line only contains 
+ *              the number of characters as set by the user. When the program starts the 
+ *              user is asked to enter a number between 40 - 100. Then the user is prompted
+ *              for a file name to read and then to format for the user. The program will  
+ *              read in the information in the file and then store each word in a linked list.
+ *              Then the lenght of each work is added to the linde until the next work will not
+ *              fit on the current line. Any left over space that needs to be filled will be added.
+ *              
+ * 
+ */
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -18,7 +32,6 @@ char delete(LISTNODEPTR *, char *);
 int isEmpty(LISTNODEPTR);
 void printList(LISTNODEPTR, int);
 void instructions(void);
-void freeMemory(LISTNODEPTR);
 
 //Global Varables
 int lineLength;
@@ -215,7 +228,7 @@ void printList(LISTNODEPTR currentPtr, int length)
         leftOverSpace = length - (charInLine-1);
         
         //adds white space char to an array for tracking
-        while(leftOverSpace > 0)
+        while(leftOverSpace >= 0)
         {
             if(numWhiteSpace < (count - 1))
             {
@@ -259,21 +272,5 @@ void printList(LISTNODEPTR currentPtr, int length)
             begin = end;
         //printf("\n");
     }
-}
-
-//Does not work....
-void freeMemory(LISTNODEPTR startPtr)
-{
-    LISTNODEPTR temp;
-
-    while(startPtr->nextPtr != NULL)
-    {
-        temp = startPtr->nextPtr;
-        free(startPtr->data);
-        free(startPtr);
-        startPtr = temp;
-    }
-
-    
 }
 
