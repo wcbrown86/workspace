@@ -33,13 +33,13 @@ public class GoalController {
 		
 		System.out.println("Result has errors: " + result.hasErrors());
 		
+		System.out.println("Minutes updated: " + goal.getMinutes());
+		
 		if(result.hasErrors())
 			return "addGoal";
-		else {
-			System.out.println("Minutes updated: " + goal.getMinutes());
+			
 		
-			return "redirect:addMinutes.html";
-		}
+		return "redirect:addMinutes.html";
 		
 	}
 
