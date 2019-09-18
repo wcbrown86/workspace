@@ -1,5 +1,8 @@
 package com.monotonic.testing.m2.TestingInJavaIntroduction;
 
+import static org.hamcrest.CoreMatchers.equalTo;
+
+import org.hamcrest.Matchers;
 import org.junit.*;
 
 
@@ -26,7 +29,8 @@ public class CafeTest {
 		 Coffee coffee = cafe.brew(CoffeeType.Espresso);
 		 
 		 // Then
-		 Assert.assertEquals("Wrong Coffee Type", CoffeeType.Espresso, coffee.getType());
+		 Assert.assertThat(coffee, Matchers.hasProperty("beans", equalTo(ESPRESSO_BEANS)));
+		 Assert.assertEquals("Wrongorg.hamcrest.Matcher<T> Coffee Type", CoffeeType.Espresso, coffee.getType());
 		 Assert.assertEquals("Incorrect amount of milk", NO_MILK, coffee.getMilk());
 		 Assert.assertEquals("Incorrect amount of Beans", ESPRESSO_BEANS,  coffee.getBeans());
 		 
