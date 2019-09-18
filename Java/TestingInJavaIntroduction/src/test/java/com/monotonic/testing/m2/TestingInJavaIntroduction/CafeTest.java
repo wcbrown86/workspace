@@ -1,7 +1,7 @@
 package com.monotonic.testing.m2.TestingInJavaIntroduction;
 
-import org.junit.Test;
-import org.junit.Assert;
+import org.junit.*;
+
 
 public class CafeTest {
 	
@@ -9,11 +9,18 @@ public class CafeTest {
 	public static final int NO_MILK = 0;
 	public static final int NO_BEANS = 0;
 	
+	private Cafe cafe;
+	
+	@Before
+	public void before() {
+		cafe = new Cafe();
+	}
+	
 	@Test
 	 public void canBrewEspresso() {
 		 
-		// given
-		Cafe cafe = cafeWithBeans();
+		// given 
+		withBeans();
 		 
 		 // When
 		 Coffee coffee = cafe.brew(CoffeeType.Espresso);
@@ -27,9 +34,9 @@ public class CafeTest {
 	
 	@Test
 	public void brewingEspressoConsumesBeans() {
-		
+
 		// given
-		Cafe cafe = cafeWithBeans();
+		withBeans();
 		
 		// When
 		Coffee coffee = cafe.brew(CoffeeType.Espresso);
@@ -41,22 +48,20 @@ public class CafeTest {
 	// Then
 	@Test(expected = IllegalStateException.class)
 	public void lattesRequiresMilk() {
-		
-		// given
-		Cafe cafe = cafeWithBeans();
+
+		// given 
+		withBeans();
 		
 		// when 
 		cafe.brew(CoffeeType.Latte);
 		
 	}
 	
-	private Cafe cafeWithBeans() {
+	private void withBeans() {
 		
-		Cafe cafe = new Cafe();
 		cafe.restockBeans(ESPRESSO_BEANS);
 		
-		return cafe;
-		
+				
 	}
 
 }
