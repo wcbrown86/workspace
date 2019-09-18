@@ -1,40 +1,41 @@
 package com.monotonic.testing.m2.TestingInJavaIntroduction;
 
 import org.junit.Test;
-
 import org.junit.Assert;
 
 public class CafeTest {
 	
+	public static final int ESPRESSO_BEANS = CoffeeType.Espresso.getRequiredBeans();
+	public static final int NO_MILK = 0;
+	public static final int NO_BEANS = 0;
+	
 	@Test
 	 public void canBrewEspresso() {
 		 
-		 // Given
-		 Cafe cafe = new Cafe();
-		 cafe.restockBeans(7);
+		// given
+		Cafe cafe = cafeWithBeans();
 		 
 		 // When
 		 Coffee coffee = cafe.brew(CoffeeType.Espresso);
 		 
 		 // Then
-		 Assert.assertEquals(CoffeeType.Espresso, coffee.getType());
-		 Assert.assertEquals(0, coffee.getMilk());
-		 Assert.assertEquals(7,  coffee.getBeans());
+		 Assert.assertEquals("Wrong Coffee Type", CoffeeType.Espresso, coffee.getType());
+		 Assert.assertEquals("Incorrect amount of milk", NO_MILK, coffee.getMilk());
+		 Assert.assertEquals("Incorrect amount of Beans", ESPRESSO_BEANS,  coffee.getBeans());
 		 
 	 }
 	
 	@Test
 	public void brewingEspressoConsumesBeans() {
 		
-		// Given
-		Cafe cafe = new Cafe();
-		cafe.restockBeans(7);
+		// given
+		Cafe cafe = cafeWithBeans();
 		
 		// When
 		Coffee coffee = cafe.brew(CoffeeType.Espresso);
 		
 		// Then
-		Assert.assertEquals(0,  cafe.getBeansInStock());
+		Assert.assertEquals("Bean Stock was not reduced.", NO_BEANS,  cafe.getBeansInStock());
 	}
 	
 	// Then
@@ -42,11 +43,19 @@ public class CafeTest {
 	public void lattesRequiresMilk() {
 		
 		// given
-		Cafe cafe = new Cafe();
-		cafe.restockBeans(7);
+		Cafe cafe = cafeWithBeans();
 		
 		// when 
 		cafe.brew(CoffeeType.Latte);
+		
+	}
+	
+	private Cafe cafeWithBeans() {
+		
+		Cafe cafe = new Cafe();
+		cafe.restockBeans(ESPRESSO_BEANS);
+		
+		return cafe;
 		
 	}
 
