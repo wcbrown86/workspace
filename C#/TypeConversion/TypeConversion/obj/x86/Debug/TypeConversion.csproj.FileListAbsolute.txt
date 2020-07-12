@@ -1,0 +1,17 @@
+C:\Users\brown\Development\workspace\C#\TypeConversion\TypeConversion\bin\Debug\TypeConversion.exe.config
+C:\Users\brown\Development\workspace\C#\TypeConversion\TypeConversion\bin\Debug\TypeConversion.exe
+C:\Users\brown\Development\workspace\C#\TypeConversion\TypeConversion\bin\Debug\TypeConversion.pdb
+C:\Users\brown\Development\workspace\C#\TypeConversion\TypeConversion\obj\x86\Debug\Workflow1.g.xaml
+C:\Users\brown\Development\workspace\C#\TypeConversion\TypeConversion\obj\x86\Debug\TypeConversion_Workflow1_BeforeInitializeComponentHelper.txt
+C:\Users\brown\Development\workspace\C#\TypeConversion\TypeConversion\obj\x86\Debug\_TypeConversion.g.cs
+C:\Users\brown\Development\workspace\C#\TypeConversion\TypeConversion\obj\x86\Debug\Workflow1.g.cs
+C:\Users\brown\Development\workspace\C#\TypeConversion\TypeConversion\obj\x86\Debug\TypeConversion_Workflow1_BeforeInitializeComponentHelper.cs
+C:\Users\brown\Development\workspace\C#\TypeConversion\TypeConversion\obj\x86\Debug\TypeConversion.csproj.XamlGeneratedCodeFileListAbsolute.txt
+C:\Users\brown\Development\workspace\C#\TypeConversion\TypeConversion\obj\x86\Debug\TypeConversion.csproj.XamlGeneratedXamlFileListAbsolute.txt
+C:\Users\brown\Development\workspace\C#\TypeConversion\TypeConversion\obj\x86\Debug\TypeConversion.csproj.XamlPass2Flag.txt
+C:\Users\brown\Development\workspace\C#\TypeConversion\TypeConversion\obj\x86\Debug\TypeConversion.dll
+C:\Users\brown\Development\workspace\C#\TypeConversion\TypeConversion\obj\x86\Debug\TypeConversion.pdb
+C:\Users\brown\Development\workspace\C#\TypeConversion\TypeConversion\obj\x86\Debug\AC2C1ABA-CCF6-44D4-8127-588FD4D0A860-DeferredValidationErrors.xml
+C:\Users\brown\Development\workspace\C#\TypeConversion\TypeConversion\obj\x86\Debug\TypeConversion.csproj.CoreCompileInputs.cache
+C:\Users\brown\Development\workspace\C#\TypeConversion\TypeConversion\obj\x86\Debug\TypeConversion.exe
+C:\Users\brown\Development\workspace\C#\TypeConversion\TypeConversion\obj\x86\Debug\TypeConversion.csproj.FileListAbsolute.txt
