@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30225.117
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Operators", "Operators\Operators.csproj", "{2DE187A3-EF2D-4590-9166-7A36999BAD6C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x86 = Debug|x86
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{2DE187A3-EF2D-4590-9166-7A36999BAD6C}.Debug|x86.ActiveCfg = Debug|x86
+		{2DE187A3-EF2D-4590-9166-7A36999BAD6C}.Debug|x86.Build.0 = Debug|x86
+		{2DE187A3-EF2D-4590-9166-7A36999BAD6C}.Release|x86.ActiveCfg = Release|x86
+		{2DE187A3-EF2D-4590-9166-7A36999BAD6C}.Release|x86.Build.0 = Release|x86
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {493CDFC5-A44E-4E60-8502-6ACA67DC0FE8}
+	EndGlobalSection
+EndGlobal
