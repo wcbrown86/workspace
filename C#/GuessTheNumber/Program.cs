@@ -8,7 +8,7 @@ namespace GuessTheNumber
     {
         static void Main(string[] args)
         {
-            string userEnteredName = "";
+            string userEnteredName;
             bool willPlayGame;
             //Application starts hear by displaying the application information.
             displayApplicationInformation();
@@ -38,12 +38,7 @@ namespace GuessTheNumber
             string appVersion = "1.0.0";
             string appAuthor = "William Brown";
 
-            //Change Text Color
-            Console.ForegroundColor = ConsoleColor.Green;
-
-            Console.WriteLine("{0}: Version: {1} by {2} \n", appName, appVersion, appAuthor);
-
-            Console.ForegroundColor = ConsoleColor.White;
+            printMessageInColor(ConsoleColor.Red, string.Format("{0}: Version: {1} by {2} \n", appName, appVersion, appAuthor));
         }
 
         static string getUserInformation()
@@ -54,7 +49,7 @@ namespace GuessTheNumber
 
             return userName;
         }
-    
+
         static bool askUserToPlayTheGame(string userName)
         {
 
@@ -65,7 +60,7 @@ namespace GuessTheNumber
                 return true;
             else
                 return false;
-    
+
         }
 
         static bool yesOrNo()
@@ -75,25 +70,24 @@ namespace GuessTheNumber
 
             do
             {
-                yesOrNo = Console.ReadLine();
+                yesOrNo = Console.ReadLine().ToLower();
 
-                if (yesOrNo.ToLower().Equals("y"))
+                if (yesOrNo.Equals("y"))
                 {
                     return true;
                 }
-                else if (yesOrNo.ToLower().Equals("n"))
+                else if (yesOrNo.Equals("n"))
                 {
                     return false;
                 }
                 else
                 {
-                    Console.WriteLine("\n");
-                    Console.WriteLine("You did not enter a valid y or n, please try again.");
+                    printMessageInColor(ConsoleColor.Red, "You did not enter a valid y or n, please try again.");
                 }
             } while (true);
 
         }
-    
+
         static void theGame(string userName)
         {
             int correctNumber;
@@ -101,47 +95,51 @@ namespace GuessTheNumber
             bool cont = true;
             string userInput;
 
-            correctNumber = new Random().Next(1,11);
+            correctNumber = new Random().Next(1, 11);
 
             do
             {
                 Console.WriteLine("\n");
                 Console.WriteLine("Please guess an number between 1 and 10.");
-                userInput = Console.ReadLine();
-
 
                 do
                 {
                     try
                     {
+                        userInput = Console.ReadLine();
                         numberGuessed = Convert.ToInt32(userInput);
                         break;
                     }
                     catch (Exception)
                     {
-                        Console.WriteLine("\n");
-                        Console.WriteLine("Please enter a valid number.");
+                        printMessageInColor(ConsoleColor.Red, "Please enter a valid number.");
 
                     }
 
                 } while (true);
 
-                if(numberGuessed == correctNumber)
+                if (numberGuessed == correctNumber)
                 {
-                    Console.WriteLine("\n");
-                    Console.WriteLine("Congrats {0}. You have guessed correctly.", userName);
+                    printMessageInColor(ConsoleColor.Green, string.Format("Congrats {0}. You have guessed correctly.", userName));
                     cont = false;
                 }
                 else
                 {
-                    Console.WriteLine("\n");
-                    Console.WriteLine("Sorry {0}.You did not answer correctly. Would you like to try again?", userName);
+                    printMessageInColor(ConsoleColor.Red, string.Format("Sorry {0}.You did not answer correctly. Would you like to try again?", userName));
 
                     if (!yesOrNo())
                         cont = false;
                 }
 
             } while (cont);
+        }
+
+        static void printMessageInColor(ConsoleColor color, string message)
+        {
+            Console.ForegroundColor = color;
+            Console.WriteLine("\n");
+            Console.WriteLine(message);
+            Console.ForegroundColor = ConsoleColor.White;
         }
     }   
 
